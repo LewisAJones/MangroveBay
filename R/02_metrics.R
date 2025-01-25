@@ -50,18 +50,18 @@ corals <- corals %>%
 # Calculate abundance of each coral genus
 abundance <- corals %>%
   # Add transect proportion
-  group_by(ReefZone, Age) %>%
+  group_by(LT) %>%
   # Add transect proportion
   mutate(TotalSamplingLength = sum(`End-Start (Intercept)`)) %>%
   mutate(SampleProportion = (`End-Start (Intercept)` / TotalSamplingLength)) %>%
-  group_by(ReefZone, Age, Genus) %>%
+  group_by(LT, Genus) %>%
   summarise(RawAbundance = sum(`End-Start (Intercept)`),
             Abundance = sum(SampleProportion)) %>%
   as.data.frame()
 
 abundance %>%
   # Add transect proportion
-  group_by(ReefZone, Age) %>%
+  group_by(LT) %>%
   summarise(Proportion = sum(Abundance))
 
 write.csv(abundance, "./results/abundance.csv", row.names = FALSE)

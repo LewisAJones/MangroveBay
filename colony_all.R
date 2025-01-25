@@ -21,9 +21,6 @@ colony <- colony %>%
   group_by(Genus, Age) %>%
   mutate(median = median(`End-Start (Intercept)`),
          n = length(`End-Start (Intercept)`))
-# Exclude genera with small number of intercepts
-exclude <- colony[which(colony$n < 25), "Genus"]$Genus
-colony <- subset(colony, !Genus %in% exclude)
 
 # Set factor levels
 colony$Age <- factor(colony$Age, levels = c("Modern", "MIS5e"))
@@ -58,7 +55,7 @@ ggplot(data = colony, aes(x = `End-Start (Intercept)`, y = after_stat(count))) +
   # X-axis label
   xlab(lab = "Colony Size (cm)") +
   # Create facets across taxa with free scales
-  facet_wrap(~Genus, ncol = 2) +
+  facet_wrap(~Genus, ncol = 4) +
   # Set themes
   theme_bw() +
   theme(
@@ -67,10 +64,10 @@ ggplot(data = colony, aes(x = `End-Start (Intercept)`, y = after_stat(count))) +
     legend.key.width = unit(1, 'cm'),
     legend.text = element_text(size = 10),
     legend.title = element_blank(),
-    legend.position = c(0.75, 0.15),
+    legend.position = c(0.9, 0.05),
     strip.text = element_text(face = "italic")
   )
 
-ggsave(filename = "./figures/size-distribution.png",
-       width = 150, height = 150, units = "mm", dpi = 300,
+ggsave(filename = "./figures/size-distribution-all.png",
+       width = 250, height = 300, units = "mm", dpi = 300,
        bg = "white")

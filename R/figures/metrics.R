@@ -24,9 +24,11 @@ indices$ReefZone <- factor(indices$ReefZone, levels = c("Reef edge",
 
 # Plot data -------------------------------------------------------------
 
-ggplot(data = indices, aes(x = ReefZone, y = value, fill = ReefZone)) +
-  geom_point(pch = 21, colour = "black", size = 3, alpha = 0.75) +
+ggplot(data = indices, aes(x = ReefZone, y = value, 
+                           fill = Age, shape = ReefZone)) +
+  geom_point(colour = "black", size = 3, alpha = 0.75) +
   scale_fill_met_d("Hokusai2") +
+  scale_shape_manual(values = c("Reef edge" = 21, "Reef slope" = 22)) +
   facet_grid(name~Age, scales = "free") +
   ylab("Metric") +
   xlab("Reef Zone") +

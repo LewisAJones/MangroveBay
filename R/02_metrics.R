@@ -47,7 +47,7 @@ corals <- corals %>%
   filter(Rank %in% c("Species", "Genus"))
 
 # Abundance -------------------------------------------------------------
-# Calculate abundance of each coral genus
+# Calculate abundance of each coral genus per transect
 abundance <- corals %>%
   # Add transect proportion
   group_by(LT) %>%
@@ -59,12 +59,32 @@ abundance <- corals %>%
             Abundance = sum(SampleProportion)) %>%
   as.data.frame()
 
+# Check values
 abundance %>%
-  # Add transect proportion
   group_by(LT) %>%
   summarise(Proportion = sum(Abundance))
 
+# Save
 write.csv(abundance, "./results/abundance.csv", row.names = FALSE)
+
+# Calculate abundance of each coral genus per site
+abundance_site <- corals %>%
+  # Add transect proportion
+  group_by(Age, ReefZone) %>%
+  # Add transect proportion
+  mutate(TotalSamplingLength = sum(`End-Start (Intercept)`)) %>%
+  mutate(SampleProportion = (`End-Start (Intercept)` / TotalSamplingLength)) %>%
+  group_by(Age, ReefZone, Genus) %>%
+  summarise(RawAbundance = sum(`End-Start (Intercept)`),
+            Abundance = sum(SampleProportion)) %>%
+  as.data.frame()
+
+# Check values
+abundance_site %>%
+  group_by(Age, ReefZone) %>%
+  summarise(Proportion = sum(Abundance))
+
+write.csv(abundance_site, "./results/abundance_site.csv", row.names = FALSE)
 
 # Matrix ----------------------------------------------------------------
 # Create matrix of abundance data

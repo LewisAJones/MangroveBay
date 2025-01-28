@@ -88,8 +88,7 @@ write.csv(abundance_site, "./results/abundance_site.csv", row.names = FALSE)
 
 # Matrix ----------------------------------------------------------------
 # Create matrix of abundance data
-abundance_mat <- matrify(abundance[, c("LT", "Genus", "Abundance")])
-write.csv(abundance_mat, "./results/abundance_matrix.csv", row.names = TRUE)
+abundance_mat <- as.data.frame(matrify(abundance[, c("LT", "Genus", "Abundance")]))
 
 # Diversity -------------------------------------------------------------
 # Calculate diversity metrics
@@ -108,4 +107,10 @@ indices <- data.frame(LT = lt,
 # Add reef zone and coverage
 indices <- left_join(x = coverage, y = indices, by = "LT")
 write.csv(indices, "./results/diversity_indices.csv", row.names = FALSE)
+# Save abundance matrix
+abundance_mat$LT <- row.names(abundance_mat)
+abundance_mat <- left_join(x = abundance_mat, 
+                           y = unique(corals[, c("Age", "LT", "ReefZone")]), 
+                           by = "LT")
+write.csv(abundance_mat, "./results/abundance_matrix.csv", row.names = FALSE)
 

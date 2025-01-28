@@ -30,7 +30,7 @@ ggplot(data = nmds, aes(x = NMDS1, y = NMDS2, shape = ReefZone,
   geom_point(size = 3, alpha = 0.75) +
   geom_label(data = NULL, aes(x = -Inf, y = Inf, label = stress),
              size = 3.5, colour = "black", fill = "white",
-             hjust = 0, vjust = 1) +
+             hjust = 2, vjust = 1) +
   geom_text_repel(aes(label = LT), colour = "black",
                   size = 2.5, min.segment.length = unit(0, 'cm'),
                   box.padding = 0.5, max.overlaps = 100) +

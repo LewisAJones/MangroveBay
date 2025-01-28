@@ -33,5 +33,9 @@ rownames(nmds) <- NULL
 # Add reef zone and age
 zone <- read.csv("./results/coverage.csv")[, 1:3]
 nmds <- left_join(x = zone, y = nmds, by = "LT")
+# Carry out PERMANOVA
+#vegdist(x = mat, method = "bray")
+adonis2(formula = mat[-1] ~ Age, data = nmds,  permutations = 999)
+
 # Save plot data
 saveRDS(nmds, "./results/NMDS_plot_data.RDS")

@@ -52,12 +52,12 @@ abundance <- abundance %>%
 
 # Set font face
 abundance$fontface <- "italic"
-abundance$fontface[which(abundance$Genus == "Other")] <- "plain"
+#abundance$fontface[which(abundance$Genus == "Other")] <- "plain"
 
 # Generate plots --------------------------------------------------------
 ggplot(data = abundance, aes(x = 1, y = Abundance, fill = Genus)) +
   geom_col(linewidth = 0.5, colour = "black") + 
-  geom_text(aes(y = label_y, label = Genus), 
+  geom_text(aes(y = label_y, label = paste0(Genus, " (~", round(Abundance), "%) ")), 
             fontface = abundance$fontface, colour = "white") +
   ylab("Abundance (%)") +
   scale_fill_discrete(
@@ -65,7 +65,7 @@ ggplot(data = abundance, aes(x = 1, y = Abundance, fill = Genus)) +
                 "*Goniastrea*", "*Lobophyllia*", "*Millepora*",
                 "*Pocillopora*", "*Porites*", "Other")
   ) +
-  #scale_fill_manual(values = met.brewer(name="Hokusai2", n = 31, type="continuous")) +
+  scale_fill_manual(values = met.brewer(name="Hokusai2", n = 9, type="continuous")) +
   facet_grid(Age~ReefZone) +
   theme_bw() +
   theme(legend.position = "bottom",

@@ -28,9 +28,9 @@ ggplot(data = nmds, aes(x = NMDS1, y = NMDS2, shape = ReefZone,
   geom_vline(xintercept = 0, linetype = 2, colour = "black") +
   geom_mark_hull(concavity = 10, expand = 0, radius = 0, aes(fill = Age, shape = NULL)) +
   geom_point(size = 3, alpha = 0.75) +
-  geom_label(data = NULL, aes(x = -Inf, y = Inf, label = stress),
+  geom_label(data = NULL, aes(x = Inf, y = Inf, label = stress),
              size = 3.5, colour = "black", fill = "white",
-             hjust = 2, vjust = 1) +
+             hjust = 1.1, vjust = 1.25) +
   geom_text_repel(aes(label = LT), colour = "black",
                   size = 2.5, min.segment.length = unit(0, 'cm'),
                   box.padding = 0.5, max.overlaps = 100) +

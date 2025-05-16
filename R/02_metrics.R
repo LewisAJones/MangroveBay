@@ -94,14 +94,12 @@ abundance_mat <- as.data.frame(matrify(abundance[, c("LT", "Genus", "Abundance")
 # Calculate diversity metrics
 alpha <- specnumber(abundance_mat)
 shannon <- diversity(x = abundance_mat, index = "shannon")
-simpson <- diversity(x = abundance_mat, index = "simpson")
+#simpson <- diversity(x = abundance_mat, index = "simpson")
 pielou <- shannon / log(alpha)
 lt <- names(alpha)
 # Bind data
 indices <- data.frame(LT = lt,
                       Alpha = alpha,
-                      Shannon = shannon,
-                      Simpson = simpson,
                       Pielou = pielou,
                       row.names = NULL)
 # Add reef zone and coverage

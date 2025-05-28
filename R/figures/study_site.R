@@ -1,7 +1,7 @@
 # Header ----------------------------------------------------------------
 # Project: MangroveBay
 # File name: study_site.R
-# Last updated: 2024-09-24
+# Last updated: 2025-05-28
 # Author: Lewis A. Jones
 # Email: LewisA.Jones@outlook.com
 # Repository: https://github.com/LewisAJones/MangroveBay
@@ -18,7 +18,6 @@ library(cowplot)
 # Packages for getting map data
 library(rnaturalearth)
 library(rnaturalearthdata)
-library(MetBrewer)
 
 # Load data -------------------------------------------------------------
 sites <- read.csv("./data/Mangrove_Bay_corals.csv")

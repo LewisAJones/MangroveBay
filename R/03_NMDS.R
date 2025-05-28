@@ -12,11 +12,13 @@ library(labdsv)
 library(tidyverse)
 
 # Load data -------------------------------------------------------------
-abundance <- read.csv("./results/abundance_matrix.csv", row.names = 1)
+abundance <- read.csv("./results/abundance_matrix.csv")
+rownames(abundance) <- abundance$LT
 
 # NMDS ------------------------------------------------------------------
 # Calculate NMDS
-nmds <- metaMDS(comm = abundance, distance = "bray", k = 2, trymax = 1000)
+nmds <- metaMDS(comm = abundance[, 1:(ncol(abundance)-3)], 
+                distance = "bray", k = 2, trymax = 1000)
 saveRDS(nmds, file = "./results/nmds.RDS", compress = "xz")
 # Report stress value
 message("The stress value for this NMDS is: ", round(nmds$stress, 3))
@@ -33,9 +35,6 @@ rownames(nmds) <- NULL
 # Add reef zone and age
 zone <- read.csv("./results/coverage.csv")[, 1:3]
 nmds <- left_join(x = zone, y = nmds, by = "LT")
-# Carry out PERMANOVA
-#vegdist(x = mat, method = "bray")
-adonis2(formula = mat[-1] ~ Age, data = nmds,  permutations = 999)
 
 # Save plot data
 saveRDS(nmds, "./results/NMDS_plot_data.RDS")

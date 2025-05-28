@@ -10,7 +10,6 @@
 library(ggplot2)
 library(ggrepel)
 library(ggforce)
-library(MetBrewer)
 
 # Load data -------------------------------------------------------------
 nmds <- readRDS("./results/NMDS_plot_data.RDS")
@@ -34,11 +33,11 @@ ggplot(data = nmds, aes(x = NMDS1, y = NMDS2, shape = ReefZone,
   geom_text_repel(aes(label = LT), colour = "black",
                   size = 2.5, min.segment.length = unit(0, 'cm'),
                   box.padding = 0.5, max.overlaps = 100) +
-  # Add colour scale
-  scale_colour_met_d("Hokusai2") +
-  # Add fill scale
-  scale_fill_met_d("Hokusai2") +
-  scale_shape_manual(values = c("Reef edge" = 21, "Reef slope" = 22)) +
+  scale_shape_manual(labels = c("Modern" = "Modern", "MIS5e" = "MIS5e (Last Interglacial)"),
+                     values = c("Reef edge" = 21, "Reef slope" = 22)) +
+  # Change label names
+  scale_fill_discrete(labels = c("Modern" = "Modern", "MIS5e" = "MIS5e (Last Interglacial)")) +
+  scale_colour_discrete(labels = c("Modern" = "Modern", "MIS5e" = "MIS5e (Last Interglacial)")) +
   theme_bw() +
   theme(
     legend.position = "bottom",

@@ -89,8 +89,6 @@ diversity <- read.csv("./results/diversity_indices.csv")
 diversity %>%
   group_by(Age, ReefZone) %>%
   summarise(Alpha = median(Alpha),
-         Shannon = median(Shannon),
-         Simpson = median(Simpson),
          Pielou = median(Pielou))
 
 # Which taxa dominated the reef? ----------------------------------------

@@ -9,7 +9,6 @@
 # Load packages ---------------------------------------------------------
 library(ggplot2)
 library(tidyverse)
-library(MetBrewer)
 library(ggtext)
 
 # Load data -------------------------------------------------------------
@@ -22,6 +21,12 @@ abundance$Abundance <- abundance$Abundance * 100
 abundance$Age <- factor(abundance$Age, levels = c("Modern", "MIS5e"))
 abundance$ReefZone <- factor(abundance$ReefZone, levels = c("Reef edge", 
                                                             "Reef slope"))
+
+# Labels
+labs <- c("Reef edge" = "Reef edge",
+          "Reef slope" = "Reef slope",
+          "Modern" = "Modern",
+          "MIS5e" = "MIS5e (Last Interglacial)")
 
 # Calculate top five ----------------------------------------------------
 # Summarise via age and reef zone
@@ -38,43 +43,29 @@ abundance <- abundance %>%
   summarise(Abundance = sum(Abundance)) %>%
   as.data.frame()
 
-# Get the cumulative sum
+# Set factor levels
 abundance <- abundance %>%
   mutate(Genus = factor(abundance$Genus,
                         levels = c("Acropora", "Echinopora", "Galaxea",
                                    "Goniastrea", "Lobophyllia", "Millepora",
-                                   "Pocillopora", "Porites", "Other"))) %>%
-  group_by(Age, ReefZone) %>%
-  arrange(desc(Genus)) %>%
-  mutate(label_y_upper = cumsum(Abundance),
-         label_y_lower = c(0, label_y_upper[1:length(label_y_upper)-1]),
-         label_y = (label_y_upper + label_y_lower) / 2)
-
-# Set font face
-abundance$fontface <- "italic"
-#abundance$fontface[which(abundance$Genus == "Other")] <- "plain"
+                                   "Pocillopora", "Porites", "Other")))
 
 # Generate plots --------------------------------------------------------
-ggplot(data = abundance, aes(x = 1, y = Abundance, fill = Genus)) +
-  geom_col(linewidth = 0.5, colour = "black") + 
-  geom_text(aes(y = label_y, label = paste0(Genus, " (~", round(Abundance), "%) ")), 
-            fontface = abundance$fontface, colour = "white") +
+ggplot(data = abundance, aes(x = Genus, y = Abundance, fill = Genus)) +
+  geom_col(colour = "black") +
+  geom_text(aes(x = Genus, 
+                y = Abundance / 2, 
+                label = paste0(round(Abundance, 2), "%")),
+            colour = "black", size = 2.25, vjust = 1) +
   ylab("Abundance (%)") +
-  scale_fill_discrete(
-    labels = c("*Acropora*", "*Echinopora*", "*Galaxea*",
-                "*Goniastrea*", "*Lobophyllia*", "*Millepora*",
-                "*Pocillopora*", "*Porites*", "Other")
-  ) +
-  scale_fill_manual(values = met.brewer(name="Hokusai2", n = 9, type="continuous")) +
-  facet_grid(Age~ReefZone) +
+  xlab ("Genus") +
+  facet_grid(Age~ReefZone, labeller = as_labeller(labs)) +
   theme_bw() +
-  theme(legend.position = "bottom",
-        legend.title = element_blank(),
-        legend.text = element_markdown(),
+  theme(legend.position = "none",
+        legend.title = element_blank(),,
         plot.margin = margin(10, 5, 5, 5, unit = "mm"),
-        axis.text.x = element_blank(),
-        axis.title.x = element_blank(),
-        axis.ticks.x = element_blank()) +
+        axis.text.x = element_text(face = c(rep("italic", 8), "plain"), 
+                                   angle = 90, vjust = 0.5, hjust = 1)) +
   guides(fill = guide_legend(byrow = TRUE))
 
 # Arrange and save ------------------------------------------------------

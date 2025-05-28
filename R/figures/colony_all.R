@@ -1,7 +1,7 @@
 # Header ----------------------------------------------------------------
 # Project: MangroveBay
-# File name: colony.R
-# Last updated: 2024-09-24
+# File name: colony_all.R
+# Last updated: 2025-05-28
 # Author: Lewis A. Jones
 # Email: LewisA.Jones@outlook.com
 # Repository: https://github.com/LewisAJones/MangroveBay
@@ -20,9 +20,6 @@ colony <- colony %>%
   group_by(Genus, Age) %>%
   mutate(median = median(`End-Start (Intercept)`),
          n = length(`End-Start (Intercept)`))
-# Exclude genera with small number of intercepts
-exclude <- colony[which(colony$n < 25), "Genus"]$Genus
-colony <- subset(colony, !Genus %in% exclude)
 
 # Set factor levels
 colony$Age <- factor(colony$Age, levels = c("Modern", "MIS5e"))
@@ -40,12 +37,13 @@ ggplot(data = colony, aes(x = `End-Start (Intercept)`, y = after_stat(count))) +
   # Add vertical line of median value
   geom_vline(aes(xintercept = median, colour = Age), linetype = 2) +
   # Add points of the median value
-  geom_point(aes(x = median, y = 0, fill = Age), colour = "black", shape = 23) +
+  geom_point(aes(x = median, y = 0, fill = Age), 
+             colour = "black", shape = 23, size = 1) +
   # Add text label of the number of intercepts
   geom_text(data = modern, aes(x = 80, y = 24, label = n), 
-            hjust = 0, size = 2.7, colour = "grey15") +
+            hjust = 0, size = 1.8, colour = "grey15") +
   geom_text(data = mis5e, aes(x = 80, y = 21, label = n), 
-            hjust = 0, size = 2.7, colour = "grey15") +
+            hjust = 0, size = 1.8, colour = "grey15") +
   # Transform x-axis to log10
   scale_x_continuous(trans = "log10") +
   # Change label names
@@ -56,7 +54,7 @@ ggplot(data = colony, aes(x = `End-Start (Intercept)`, y = after_stat(count))) +
   # X-axis label
   xlab(lab = "Colony Size (cm)") +
   # Create facets across taxa with free scales
-  facet_wrap(~Genus, ncol = 2) +
+  facet_wrap(~Genus, ncol = 4) +
   # Set themes
   theme_bw() +
   theme(
@@ -65,10 +63,10 @@ ggplot(data = colony, aes(x = `End-Start (Intercept)`, y = after_stat(count))) +
     legend.key.width = unit(1, 'cm'),
     legend.text = element_text(size = 10),
     legend.title = element_blank(),
-    legend.position = c(0.75, 0.15),
+    legend.position = "bottom",
     strip.text = element_text(face = "italic")
   )
 
-ggsave(filename = "./figures/size-distribution.png",
-       width = 150, height = 150, units = "mm", dpi = 300,
+ggsave(filename = "./figures/size-distribution-all.png",
+       width = 200, height = 275, units = "mm", dpi = 300,
        bg = "white")

@@ -38,6 +38,9 @@ wilcox.test(x = coverage$`MIS5e_Reef slope`$Coverage,
 # Did colony size distribution decrease? --------------------------------
 # Load data
 colony <- read_csv("./data/Mangrove_Bay_corals.csv")
+# Filter by rank
+colony <- colony %>%
+  filter(Rank %in% c("Species", "Genus"))
 # How many unique genera?
 length(unique(colony$Genus))
 # Which taxa are present in both modern and fossil?

@@ -24,7 +24,8 @@ median <- median %>%
 median$Age <- factor(median$Age, levels = c("Modern", "MIS5e"))
 median$name <- factor(median$name, levels = c("Alpha","Shannon", "Simpson", "Pielou"))
 median$ReefZone <- factor(median$ReefZone, levels = c("Reef edge", 
-                                                        "Reef slope"))
+                                                      "Shallow reef slope",
+                                                      "Deeper reef slope"))
 
 # Format indices
 indices <- indices %>%
@@ -33,7 +34,8 @@ indices <- indices %>%
 indices$Age <- factor(indices$Age, levels = c("Modern", "MIS5e"))
 indices$name <- factor(indices$name, levels = c("Alpha", "Pielou"))
 indices$ReefZone <- factor(indices$ReefZone, levels = c("Reef edge", 
-                                                        "Reef slope"))
+                                                        "Shallow reef slope",
+                                                        "Deeper reef slope"))
 
 # Labels
 labs <- c("Modern" = "Modern",
@@ -48,7 +50,9 @@ ggplot(data = indices, aes(x = ReefZone, y = value,
   geom_point(colour = "black", size = 3, alpha = 0.75) +
   geom_point(data = median, aes(x = ReefZone, y = value),
              colour = "black", fill = "yellow", shape = 23, size = 1.5, alpha = 0.75) +
-  scale_shape_manual(values = c("Reef edge" = 21, "Reef slope" = 22)) +
+  scale_shape_manual(values = c("Reef edge" = 21, 
+                                "Shallow reef slope" = 22, 
+                                "Deeper reef slope" = 24)) +
   facet_grid(name~Age, scales = "free", labeller = as_labeller(labs)) +
   ylab("Metric") +
   xlab("Reef Zone") +
@@ -61,6 +65,6 @@ ggplot(data = indices, aes(x = ReefZone, y = value,
 # Save ------------------------------------------------------------------
 
 ggsave("./figures/metrics.png",
-       height = 125, width = 150, units = "mm",
+       height = 150, width = 150, units = "mm",
        dpi = 300)
 

@@ -18,14 +18,16 @@ stress <- paste0("Stress = ", stress)
 
 nmds$Age <- factor(x = nmds$Age, levels = c("Modern", "MIS5e"))
 nmds$ReefZone <- factor(nmds$ReefZone, levels = c("Reef edge", 
-                                                  "Reef slope"))
+                                                  "Shallow reef slope",
+                                                  "Deeper reef slope"))
 
 # Plot data -------------------------------------------------------------
 ggplot(data = nmds, aes(x = NMDS1, y = NMDS2, shape = ReefZone, 
                         colour = Age, fill = Age)) +
   geom_hline(yintercept = 0, linetype = 2, colour = "black") +
   geom_vline(xintercept = 0, linetype = 2, colour = "black") +
-  geom_mark_hull(concavity = 10, expand = 0, radius = 0, aes(fill = Age, shape = NULL)) +
+  geom_mark_hull(concavity = 10, expand = 0, radius = 0, 
+                 aes(fill = Age, shape = NULL)) +
   geom_point(size = 3, alpha = 0.75) +
   geom_label(data = NULL, aes(x = Inf, y = Inf, label = stress),
              size = 3.5, colour = "black", fill = "white",
@@ -33,11 +35,16 @@ ggplot(data = nmds, aes(x = NMDS1, y = NMDS2, shape = ReefZone,
   geom_text_repel(aes(label = LT), colour = "black",
                   size = 2.5, min.segment.length = unit(0, 'cm'),
                   box.padding = 0.5, max.overlaps = 100) +
-  scale_shape_manual(labels = c("Modern" = "Modern", "MIS5e" = "MIS5e (Last Interglacial)"),
-                     values = c("Reef edge" = 21, "Reef slope" = 22)) +
+  scale_shape_manual(labels = c("Modern" = "Modern", 
+                                "MIS5e" = "MIS5e (Last Interglacial)"),
+                     values = c("Reef edge" = 21, 
+                                "Shallow reef slope" = 22, 
+                                "Deeper reef slope" = 24)) +
   # Change label names
-  scale_fill_discrete(labels = c("Modern" = "Modern", "MIS5e" = "MIS5e (Last Interglacial)")) +
-  scale_colour_discrete(labels = c("Modern" = "Modern", "MIS5e" = "MIS5e (Last Interglacial)")) +
+  scale_fill_discrete(labels = c("Modern" = "Modern", 
+                                 "MIS5e" = "MIS5e (Last Interglacial)")) +
+  scale_colour_discrete(labels = c("Modern" = "Modern", 
+                                   "MIS5e" = "MIS5e (Last Interglacial)")) +
   theme_bw() +
   theme(
     legend.position = "bottom",

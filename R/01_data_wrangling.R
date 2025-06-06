@@ -91,10 +91,8 @@ corals$Rank[which(corals$Genus == "Porites")] <- "Genus"
 corals$ScientificName[which(corals$Genus == "Millepora")] <- "Millepora sp."
 corals$Rank[which(corals$Genus == "Millepora")] <- "Genus"
 
-## Exclude deeper reef slope --------------------------------------------
-corals <- subset(x = corals, ReefZone != c("Deeper reef slope"))
-# Rename shallow reef slope
-corals$ReefZone[which(corals$ReefZone == "Shallow reef slope")] <- "Reef slope"
+# Rename reef slope (fossil)
+corals$ReefZone[which(corals$ReefZone == "Reef slope")] <- "Shallow reef slope"
 
 # Save ------------------------------------------------------------------
 # Sort by index

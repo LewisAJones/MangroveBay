@@ -8,6 +8,7 @@
 
 # Libraries -------------------------------------------------------------
 library(ggplot2)
+library(scales)
 
 # Load data -------------------------------------------------------------
 coverage <- read.csv("./results/coverage.csv")
@@ -16,7 +17,8 @@ coverage$Coverage <- coverage$Coverage * 100
 # Set factor levels
 coverage$Age <- factor(coverage$Age, levels = c("Modern", "MIS5e"))
 coverage$ReefZone <- factor(coverage$ReefZone, levels = c("Reef edge", 
-                                                        "Reef slope"))
+                                                        "Shallow reef slope",
+                                                        "Deeper reef slope"))
 # Calculate median
 median <- coverage %>%
   group_by(Age, ReefZone) %>%
@@ -33,7 +35,10 @@ ggplot(data = coverage, aes(x = ReefZone, y = Coverage,
   geom_point(colour = "black", size = 3, alpha = 0.85) +
   geom_point(data = median, aes(x = ReefZone, y = Median),
              colour = "black", fill = "yellow", shape = 23, size = 1.5, alpha = 0.75) +
-  scale_shape_manual(values = c("Reef edge" = 21, "Reef slope" = 22)) +
+  scale_shape_manual(values = c("Reef edge" = 21, 
+                                "Shallow reef slope" = 22,
+                                "Deeper reef slope" = 24)) +
+  scale_x_discrete(labels = wrap_format(12)) +
   facet_wrap(~Age, ncol = 1, labeller = as_labeller(labs)) +
   ylab("Coverage (%)") +
   xlab("Reef Zone") +
@@ -45,5 +50,5 @@ ggplot(data = coverage, aes(x = ReefZone, y = Coverage,
 # Save ------------------------------------------------------------------
 
 ggsave("./figures/coverage.png",
-       height = 125, width = 75, units = "mm",
+       height = 150, width = 100, units = "mm",
        dpi = 300)

@@ -18,21 +18,21 @@ coverage <- split(x = coverage, f = coverage$split)
 # Calculate median
 median(coverage$`MIS5e_Reef edge`$Coverage)
 median(coverage$`Modern_Reef edge`$Coverage)
-median(coverage$`MIS5e_Reef slope`$Coverage)
-median(coverage$`Modern_Reef slope`$Coverage)
+median(coverage$`MIS5e_Shallow reef slope`$Coverage)
+median(coverage$`Modern_Shallow reef slope`$Coverage)
 # Calculate IQR
 IQR(coverage$`MIS5e_Reef edge`$Coverage)
 IQR(coverage$`Modern_Reef edge`$Coverage)
-IQR(coverage$`MIS5e_Reef slope`$Coverage)
-IQR(coverage$`Modern_Reef slope`$Coverage)
+IQR(coverage$`MIS5e_Shallow reef slope`$Coverage)
+IQR(coverage$`Modern_Shallow reef slope`$Coverage)
 # Perform tests
 # MIS5e reef edge vs Modern reef edge
 wilcox.test(x = coverage$`MIS5e_Reef edge`$Coverage, 
             y = coverage$`Modern_Reef edge`$Coverage,
             alternative = c("greater"))
 # MIS5e reef slope vs Modern reef slope
-wilcox.test(x = coverage$`MIS5e_Reef slope`$Coverage, 
-            y = coverage$`Modern_Reef slope`$Coverage,
+wilcox.test(x = coverage$`MIS5e_Shallow reef slope`$Coverage, 
+            y = coverage$`Modern_Shallow reef slope`$Coverage,
             alternative = c("greater"))
 
 # Did colony size distribution decrease? --------------------------------
@@ -113,18 +113,18 @@ abundance %>%
   filter(Age == "MIS5e", ReefZone == "Reef edge") %>%
   arrange(desc(Abundance))
 abundance %>% 
-  filter(Age == "Modern", ReefZone == "Reef slope") %>%
+  filter(Age == "Modern", ReefZone == "Shallow reef slope") %>%
   arrange(desc(Abundance))
 abundance %>% 
-  filter(Age == "MIS5e", ReefZone == "Reef slope") %>%
+  filter(Age == "MIS5e", ReefZone == "Shallow reef slope") %>%
   arrange(desc(Abundance))
 
 # Are MIS5e communities distinct from the Modern? -----------------------
 mat <- read.csv("./results/abundance_matrix.csv")
 # Extract columns
-df <- mat[, c(32, 33, 34)]
+df <- mat[, c(37, 38, 39)]
 # Drop columns
-mat <- mat[, -c(32, 33, 34)]
+mat <- mat[, -c(37, 38, 39)]
 # Create distance matrix
 mat_dist <- vegdist(mat, method = "bray")
 # Plot dispersion

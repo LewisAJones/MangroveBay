@@ -20,11 +20,13 @@ abundance$Abundance <- abundance$Abundance * 100
 # Set factor levels
 abundance$Age <- factor(abundance$Age, levels = c("Modern", "MIS5e"))
 abundance$ReefZone <- factor(abundance$ReefZone, levels = c("Reef edge", 
-                                                          "Reef slope"))
+                                                            "Shallow reef slope",
+                                                            "Deeper reef slope"))
 
 # Labels
 labs <- c("Reef edge" = "Reef edge",
-          "Reef slope" = "Reef slope",
+          "Shallow reef slope" = "Shallow reef slope",
+          "Deeper reef slope" = "Deeper reef slope",
           "Modern" = "Modern",
           "MIS5e" = "MIS5e (Last Interglacial)")
 
@@ -46,5 +48,5 @@ ggplot(data = abundance, aes(x = Genus, y = Abundance, fill = Genus)) +
 
 # Arrange and save ------------------------------------------------------
 ggsave("figures/community_composition_all.png", dpi = 600,
-       width = 250, height = 200, units = "mm", scale = 1)
+       width = 350, height = 200, units = "mm", scale = 1)
 

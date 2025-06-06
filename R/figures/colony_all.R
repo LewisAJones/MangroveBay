@@ -40,9 +40,9 @@ ggplot(data = colony, aes(x = `End-Start (Intercept)`, y = after_stat(count))) +
   geom_point(aes(x = median, y = 0, fill = Age), 
              colour = "black", shape = 23, size = 1) +
   # Add text label of the number of intercepts
-  geom_text(data = modern, aes(x = 80, y = 24, label = n), 
+  geom_text(data = modern, aes(x = 80, y = 47, label = n), 
             hjust = 0, size = 1.8, colour = "grey15") +
-  geom_text(data = mis5e, aes(x = 80, y = 21, label = n), 
+  geom_text(data = mis5e, aes(x = 80, y = 41, label = n), 
             hjust = 0, size = 1.8, colour = "grey15") +
   # Transform x-axis to log10
   scale_x_continuous(trans = "log10") +

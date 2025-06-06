@@ -1,5 +1,6 @@
 "Age","ReefZone","TransectsPerZone","TransectMeanLength","TransectSDLength"
 "MIS5e","Reef edge",3,2110.33333333333,127.201939188573
-"MIS5e","Reef slope",4,2174,157.285303403295
+"MIS5e","Shallow reef slope",4,2174,157.285303403295
+"Modern","Deeper reef slope",6,2355.5,273.59002174787
 "Modern","Reef edge",6,2058.16666666667,41.3396500549614
-"Modern","Reef slope",6,2376.16666666667,283.021848391015
+"Modern","Shallow reef slope",6,2376.16666666667,283.021848391015

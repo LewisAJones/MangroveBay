@@ -40,6 +40,11 @@ countries <- c("egypt", "saudi arabia", "jordan", "isreal", "syria",
 countries <- ne_countries(scale = "large", country = countries,
                           returnclass = "sf")
 
+# City reference points
+cities <- data.frame(name = c("Hurghada", "El Qoseir", "Marsa Alam", "Mangrove Bay"),
+                     lng = c(33.812811, 34.280984, 34.888994, 34.41968),
+                     lat = c(27.254897, 26.102429, 25.068336, 25.87015))
+
 # Generate map ----------------------------------------------------------
 # Define colours for plotting
 land <- "lightgrey"
@@ -65,13 +70,15 @@ africa <- ggplot(data = world) +
 # Make locality map
 localities <- ggplot(data = countries) +
   geom_sf(colour = "black", fill = land) +
+  geom_point(data = cities, aes(x = lng, y = lat)) +
+  geom_text_repel(data = cities, aes(x = lng, y = lat, label = name)) +
   geom_point(data = sites, aes(x = lng, y = lat), 
-             colour = "black", fill = "#e09351", shape = 21, size = 4) +
+             colour = "black", fill = "#e09351", shape = 25, size = 4) +
   scale_x_continuous(expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) +
   xlab("Longitude (º)") +
   ylab("Latitude (º)") +
-  annotation_scale(text_cex = 1) +
+  annotation_scale(text_cex = 1.1) +
   annotation_north_arrow(location = "bl",
                          pad_y = unit(1, "cm"),
                          height = unit(2, "cm"), width = unit(2, "cm")) +
@@ -80,7 +87,7 @@ localities <- ggplot(data = countries) +
   theme(panel.background = element_rect(fill = sea),
         plot.background = element_blank(),
         axis.title = element_text(size = 16),
-        axis.text = element_text(size = 12),
+        axis.text = element_text(size = 14),
         panel.grid = element_blank())
 
 # Create inset
@@ -97,5 +104,6 @@ map
 ggsave("./figures/study-site-map.png",
        bg = "white", dpi = 600,
        width = 200, height = 180, units = "mm")
-
-
+ggsave("./figures/study-site-map.pdf",
+       bg = "white", dpi = 600,
+       width = 200, height = 180, units = "mm")

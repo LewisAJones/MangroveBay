@@ -16,10 +16,17 @@ nmds <- readRDS("./results/NMDS_plot_data.RDS")
 stress <- round(readRDS(file = "./results/nmds.RDS")$stress, 3)
 stress <- paste0("Stress = ", stress)
 
+nmds$ReefZone[which(nmds$Age == "MIS5e" & 
+                      nmds$ReefZone == "Reef edge")] <- "Shallower reef horizon"
+nmds$ReefZone[which(nmds$Age == "MIS5e" & 
+                      nmds$ReefZone == "Shallow reef slope")] <- "Deeper reef horizon"
+
 nmds$Age <- factor(x = nmds$Age, levels = c("Modern", "MIS5e"))
 nmds$ReefZone <- factor(nmds$ReefZone, levels = c("Reef edge", 
                                                   "Shallow reef slope",
-                                                  "Deeper reef slope"))
+                                                  "Deeper reef slope",
+                                                  "Shallower reef horizon",
+                                                  "Deeper reef horizon"))
 
 # Plot data -------------------------------------------------------------
 ggplot(data = nmds, aes(x = NMDS1, y = NMDS2, shape = ReefZone, 
@@ -39,7 +46,9 @@ ggplot(data = nmds, aes(x = NMDS1, y = NMDS2, shape = ReefZone,
                                 "MIS5e" = "MIS5e (Last Interglacial)"),
                      values = c("Reef edge" = 21, 
                                 "Shallow reef slope" = 22, 
-                                "Deeper reef slope" = 24)) +
+                                "Deeper reef slope" = 23,
+                                "Shallower reef horizon" = 24,
+                                "Deeper reef horizon" = 25)) +
   # Change label names
   scale_fill_discrete(labels = c("Modern" = "Modern", 
                                  "MIS5e" = "MIS5e (Last Interglacial)")) +
@@ -51,6 +60,8 @@ ggplot(data = nmds, aes(x = NMDS1, y = NMDS2, shape = ReefZone,
     legend.title = element_blank(),
     legend.background = element_blank(),
     legend.key.size = unit(5, "mm"),
+    legend.box = "vertical", 
+    legend.margin = margin(),
     legend.key = element_rect(fill = NA)
   )
 

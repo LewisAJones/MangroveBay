@@ -14,11 +14,19 @@ library(scales)
 coverage <- read.csv("./results/coverage.csv")
 coverage$Coverage <- coverage$Coverage * 100
 
+# Update names
+coverage$ReefZone[which(coverage$Age == "MIS5e" & 
+                          coverage$ReefZone == "Reef edge")] <- "Shallower reef horizon"
+coverage$ReefZone[which(coverage$Age == "MIS5e" & 
+                          coverage$ReefZone == "Shallow reef slope")] <- "Deeper reef horizon"
+
 # Set factor levels
-coverage$Age <- factor(coverage$Age, levels = c("Modern", "MIS5e"))
+coverage$Age <- factor(x = coverage$Age, levels = c("Modern", "MIS5e"))
 coverage$ReefZone <- factor(coverage$ReefZone, levels = c("Reef edge", 
-                                                        "Shallow reef slope",
-                                                        "Deeper reef slope"))
+                                                          "Shallow reef slope",
+                                                          "Deeper reef slope",
+                                                          "Shallower reef horizon",
+                                                          "Deeper reef horizon"))
 # Calculate median
 median <- coverage %>%
   group_by(Age, ReefZone) %>%
@@ -35,11 +43,15 @@ ggplot(data = coverage, aes(x = ReefZone, y = Coverage,
   geom_point(colour = "black", size = 3, alpha = 0.85) +
   geom_point(data = median, aes(x = ReefZone, y = Median),
              colour = "black", fill = "yellow", shape = 23, size = 1.5, alpha = 0.75) +
-  scale_shape_manual(values = c("Reef edge" = 21, 
-                                "Shallow reef slope" = 22,
-                                "Deeper reef slope" = 24)) +
-  scale_x_discrete(labels = wrap_format(12)) +
-  facet_wrap(~Age, ncol = 1, labeller = as_labeller(labs)) +
+  scale_shape_manual(labels = c("Modern" = "Modern", 
+                                "MIS5e" = "MIS5e (Last Interglacial)"),
+                     values = c("Reef edge" = 21, 
+                                "Shallow reef slope" = 22, 
+                                "Deeper reef slope" = 23,
+                                "Shallower reef horizon" = 24,
+                                "Deeper reef horizon" = 25)) +
+  scale_x_discrete(labels = wrap_format(14)) +
+  facet_wrap(~Age, ncol = 2, scales = "free", labeller = as_labeller(labs)) +
   ylab("Coverage (%)") +
   xlab("Reef Zone") +
   theme_bw() +
@@ -50,5 +62,5 @@ ggplot(data = coverage, aes(x = ReefZone, y = Coverage,
 # Save ------------------------------------------------------------------
 
 ggsave("./figures/coverage.png",
-       height = 150, width = 100, units = "mm",
-       dpi = 300)
+       height = 75, width = 150, units = "mm",
+       dpi = 300, scale = 1.5)

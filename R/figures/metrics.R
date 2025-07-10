@@ -14,6 +14,12 @@ library(scales)
 # Load data -------------------------------------------------------------
 indices <- read.csv("./results/diversity_indices.csv")
 
+# Update names
+indices$ReefZone[which(indices$Age == "MIS5e" & 
+                         indices$ReefZone == "Reef edge")] <- "Shallower reef horizon"
+indices$ReefZone[which(indices$Age == "MIS5e" & 
+                         indices$ReefZone == "Shallow reef slope")] <- "Deeper reef horizon"
+
 # Summarise across age and reef zone
 median <- indices %>%
   group_by(Age, ReefZone) %>%
@@ -24,8 +30,10 @@ median <- median %>%
 median$Age <- factor(median$Age, levels = c("Modern", "MIS5e"))
 median$name <- factor(median$name, levels = c("Alpha","Shannon", "Simpson", "Pielou"))
 median$ReefZone <- factor(median$ReefZone, levels = c("Reef edge", 
-                                                      "Shallow reef slope",
-                                                      "Deeper reef slope"))
+                                                        "Shallow reef slope",
+                                                        "Deeper reef slope",
+                                                        "Shallower reef horizon",
+                                                        "Deeper reef horizon"))
 
 # Format indices
 indices <- indices %>%
@@ -34,8 +42,10 @@ indices <- indices %>%
 indices$Age <- factor(indices$Age, levels = c("Modern", "MIS5e"))
 indices$name <- factor(indices$name, levels = c("Alpha", "Pielou"))
 indices$ReefZone <- factor(indices$ReefZone, levels = c("Reef edge", 
-                                                        "Shallow reef slope",
-                                                        "Deeper reef slope"))
+                                                          "Shallow reef slope",
+                                                          "Deeper reef slope",
+                                                          "Shallower reef horizon",
+                                                          "Deeper reef horizon"))
 
 # Labels
 labs <- c("Modern" = "Modern",
@@ -50,13 +60,17 @@ ggplot(data = indices, aes(x = ReefZone, y = value,
   geom_point(colour = "black", size = 3, alpha = 0.75) +
   geom_point(data = median, aes(x = ReefZone, y = value),
              colour = "black", fill = "yellow", shape = 23, size = 1.5, alpha = 0.75) +
-  scale_shape_manual(values = c("Reef edge" = 21, 
+  scale_shape_manual(labels = c("Modern" = "Modern", 
+                                "MIS5e" = "MIS5e (Last Interglacial)"),
+                     values = c("Reef edge" = 21, 
                                 "Shallow reef slope" = 22, 
-                                "Deeper reef slope" = 24)) +
+                                "Deeper reef slope" = 23,
+                                "Shallower reef horizon" = 24,
+                                "Deeper reef horizon" = 25)) +
   facet_grid(name~Age, scales = "free", labeller = as_labeller(labs)) +
   ylab("Metric") +
   xlab("Reef Zone") +
-  scale_x_discrete(labels = wrap_format(12)) +
+  scale_x_discrete(labels = wrap_format(14)) +
   theme_bw() +
   theme(
     legend.position = "none"

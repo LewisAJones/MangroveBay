@@ -1,7 +1,7 @@
 # Header ----------------------------------------------------------------
 # Project: MangroveBay
 # File name: nmds.R
-# Last updated: 2024-08-11
+# Last updated: 2025-07-11
 # Author: Lewis A. Jones
 # Email: LewisA.Jones@outlook.com
 # Repository: https://github.com/LewisAJones/MangroveBay
@@ -35,7 +35,7 @@ ggplot(data = nmds, aes(x = NMDS1, y = NMDS2, shape = ReefZone,
   geom_vline(xintercept = 0, linetype = 2, colour = "black") +
   geom_mark_hull(concavity = 10, expand = 0, radius = 0, 
                  aes(fill = Age, shape = NULL)) +
-  geom_point(size = 3, alpha = 0.75) +
+  geom_point(size = 3, alpha = 0.7) +
   geom_label(data = NULL, aes(x = Inf, y = Inf, label = stress),
              size = 3.5, colour = "black", fill = "white",
              hjust = 1.1, vjust = 1.25) +

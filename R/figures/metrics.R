@@ -1,7 +1,7 @@
 # Header ----------------------------------------------------------------
 # Project: MangroveBay
 # File name: metrics.R
-# Last updated: 2024-08-11
+# Last updated: 2025-07-11
 # Author: Lewis A. Jones
 # Email: LewisA.Jones@outlook.com
 # Repository: https://github.com/LewisAJones/MangroveBay
@@ -57,7 +57,7 @@ labs <- c("Modern" = "Modern",
 
 ggplot(data = indices, aes(x = ReefZone, y = value, 
                            fill = Age, shape = ReefZone)) +
-  geom_point(colour = "black", size = 3, alpha = 0.75) +
+  geom_point(colour = "black", size = 3, alpha = 0.7) +
   geom_point(data = median, aes(x = ReefZone, y = value),
              colour = "black", fill = "yellow", shape = 23, size = 1.5, alpha = 0.75) +
   scale_shape_manual(labels = c("Modern" = "Modern", 

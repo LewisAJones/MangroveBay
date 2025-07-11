@@ -1,7 +1,7 @@
 # Header ----------------------------------------------------------------
 # Project: MangroveBay
 # File name: coverage.R
-# Last updated: 2024-09-24
+# Last updated: 2025-07-11
 # Author: Lewis A. Jones
 # Email: LewisA.Jones@outlook.com
 # Repository: https://github.com/LewisAJones/MangroveBay
@@ -40,9 +40,9 @@ labs <- c("Modern" = "Modern",
 
 ggplot(data = coverage, aes(x = ReefZone, y = Coverage, 
                             fill = Age, shape = ReefZone)) +
-  geom_point(colour = "black", size = 3, alpha = 0.85) +
+  geom_point(colour = "black", size = 3, alpha = 0.7) +
   geom_point(data = median, aes(x = ReefZone, y = Median),
-             colour = "black", fill = "yellow", shape = 23, size = 1.5, alpha = 0.75) +
+             fill = "yellow", colour = "black", shape = 23, size = 1.5, alpha = 0.75) +
   scale_shape_manual(labels = c("Modern" = "Modern", 
                                 "MIS5e" = "MIS5e (Last Interglacial)"),
                      values = c("Reef edge" = 21, 
@@ -51,7 +51,7 @@ ggplot(data = coverage, aes(x = ReefZone, y = Coverage,
                                 "Shallower reef horizon" = 24,
                                 "Deeper reef horizon" = 25)) +
   scale_x_discrete(labels = wrap_format(14)) +
-  facet_wrap(~Age, ncol = 2, scales = "free", labeller = as_labeller(labs)) +
+  facet_wrap(~Age, ncol = 2, scales = "free_x", labeller = as_labeller(labs)) +
   ylab("Coverage (%)") +
   xlab("Reef Zone") +
   theme_bw() +

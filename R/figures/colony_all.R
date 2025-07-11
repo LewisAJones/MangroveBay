@@ -1,7 +1,7 @@
 # Header ----------------------------------------------------------------
 # Project: MangroveBay
 # File name: colony_all.R
-# Last updated: 2025-05-28
+# Last updated: 2025-07-11
 # Author: Lewis A. Jones
 # Email: LewisA.Jones@outlook.com
 # Repository: https://github.com/LewisAJones/MangroveBay
@@ -33,7 +33,8 @@ mis5e$n <- paste0("n = ", mis5e$n, " (MIS5e)")
 
 ggplot(data = colony, aes(x = `End-Start (Intercept)`, y = after_stat(count))) +
   # Plot density
-  geom_histogram(aes(fill = Age, colour = Age), bins = 30, position = "identity", alpha = 0.4) +
+  geom_histogram(aes(fill = Age, colour = Age), bins = 30, 
+                 position = "identity", alpha = 0.4) +
   # Add vertical line of median value
   geom_vline(aes(xintercept = median, colour = Age), linetype = 2) +
   # Add points of the median value

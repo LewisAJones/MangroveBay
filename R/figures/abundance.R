@@ -1,7 +1,7 @@
 # Header ----------------------------------------------------------------
 # Project: MangroveBay
 # File name: abundance.R
-# Last updated: 2024-09-24
+# Last updated: 2025-07-11
 # Author: Lewis A. Jones
 # Email: LewisA.Jones@outlook.com
 # Repository: https://github.com/LewisAJones/MangroveBay
@@ -54,77 +54,34 @@ abundance <- abundance %>%
             LIQR = quantile(x = Abundance, probs = 0.25),
             UIQR = quantile(x = Abundance, probs = 0.75))
 
-# Calculate top five ----------------------------------------------------
-# Summarise via age and reef zone
-# abundance <- abundance %>%
-#   group_by(Age, ReefZone) %>%
-#   mutate(Threshold = Median >= 10)
-# # Add index
-# abundance$Genus[which(abundance$Threshold == FALSE)] <- "Other"
-
-# abundance <- abundance %>%
-#   # Add transect proportion
-#   group_by(Age, ReefZone, Genus) %>%
-#   # Add transect proportion
-#   summarise(Abundance = sum(Abundance)) %>%
-#   as.data.frame()
-
-# Set factor levels
-# abundance$Genus <- factor(abundance$Genus, 
-#                           levels = c("Acropora", "Echinopora", "Galaxea",
-#                                    "Goniastrea", "Lobophyllia", "Millepora",
-#                                    "Montipora",
-#                                    "Pocillopora", "Porites", "Other"))
-
-
-# Split datasets --------------------------------------------------------
-modern <- subset(abundance, Age == "Modern")
-MIS5e <- subset(abundance, Age == "MIS5e")
-
 # Generate plots --------------------------------------------------------
-p1 <- ggplot(data = modern, aes(x = Genus, y = Median, fill = Genus)) +
+p <- ggplot(data = abundance, aes(x = Genus, y = Median, colour = Genus, 
+                                  fill = Genus)) +
   geom_col(colour = "black") +
+  geom_point(size = 0.5, colour = "black") +
   geom_text(aes(x = Genus, 
-                y = UIQR + 0.5, 
-                label = paste0(round(Median, 2), "%")),
-            colour = "black", size = 2.25, 
-            angle = 90, vjust = 0.5, hjust = 0) +
-  geom_errorbar(aes(x = Genus, ymin = LIQR, ymax = UIQR)) +
-  scale_y_continuous(limits = c(0, 85)) +
+                y = UIQR + 2.5, 
+                label = paste0(round(Median, 2), "%"),),
+            size = 2.25, angle = 90, vjust = 0.5, hjust = 0) +
+  geom_errorbar(aes(x = Genus, ymin = LIQR, ymax = UIQR), colour = "black") +
+  scale_y_continuous(limits = c(0, 100)) +
   ylab("Abundance (%)") +
   xlab ("Genus") +
-  facet_grid(Age~ReefZone, labeller = as_labeller(labs)) +
+  facet_wrap(Age~ReefZone, ncol = 1, 
+             strip.position = "right", labeller = as_labeller(labs)) +
   theme_bw() +
   theme(legend.position = "none",
         legend.title = element_blank(),
         plot.margin = margin(10, 5, 5, 5, unit = "mm"),
         axis.text.x = element_text(face = c("italic"), size = 8,
-                                   angle = 90, vjust = 0.5, hjust = 1)) +
-  guides(fill = guide_legend(byrow = TRUE))
+                                   angle = 90, vjust = 0.5, hjust = 1))
 
-p2 <- ggplot(data = MIS5e, aes(x = Genus, y = Median, fill = Genus)) +
-  geom_col(colour = "black") +
-  geom_text(aes(x = Genus, 
-                y = UIQR + 0.5, 
-                label = paste0(round(Median, 2), "%")),
-            colour = "black", size = 2.25, 
-            angle = 90, vjust = 0.5, hjust = 0) +
-  geom_errorbar(aes(x = Genus, ymin = LIQR, ymax = UIQR)) +
-  scale_y_continuous(limits = c(0, 65)) +
-  ylab("Abundance (%)") +
-  xlab ("Genus") +
-  facet_grid(Age~ReefZone, labeller = as_labeller(labs)) +
-  theme_bw() +
-  theme(legend.position = "none",
-        legend.title = element_blank(),
-        plot.margin = margin(10, 5, 5, 5, unit = "mm"),
-        axis.text.x = element_text(face = c("italic"), size = 8,
-                                   angle = 90, vjust = 0.5, hjust = 1)) +
-  guides(fill = guide_legend(byrow = TRUE))
+build <- ggplot_build(p)
+default_colours <- unique(build$data[[1]][order(build$data[[1]]$x), ]$fill)
 
-ggarrange(p1, p2, nrow = 2, labels = "AUTO")
+p + theme(axis.text.x = element_text(colour = default_colours))
 
 # Arrange and save ------------------------------------------------------
 ggsave("figures/community_composition.png", dpi = 600,
-       width = 275, height = 300, units = "mm", scale = 1)
+       width = 210, height = 297, units = "mm", scale = 1)
 

@@ -1,7 +1,7 @@
 # Header ----------------------------------------------------------------
 # Project: MangroveBay
 # File name: colony.R
-# Last updated: 2024-09-24
+# Last updated: 2025-07-11
 # Author: Lewis A. Jones
 # Email: LewisA.Jones@outlook.com
 # Repository: https://github.com/LewisAJones/MangroveBay
@@ -42,9 +42,9 @@ ggplot(data = colony, aes(x = `End-Start (Intercept)`, y = after_stat(count))) +
   # Add points of the median value
   geom_point(aes(x = median, y = 0, fill = Age), colour = "black", shape = 23) +
   # Add text label of the number of intercepts
-  geom_text(data = modern, aes(x = 80, y = 48, label = n), 
+  geom_text(data = modern, aes(x = 85, y = 48, label = n), 
             hjust = 0, size = 2.7, colour = "grey15") +
-  geom_text(data = mis5e, aes(x = 80, y = 42, label = n), 
+  geom_text(data = mis5e, aes(x = 85, y = 44, label = n), 
             hjust = 0, size = 2.7, colour = "grey15") +
   # Transform x-axis to log10
   scale_x_continuous(trans = "log10") +
@@ -70,5 +70,5 @@ ggplot(data = colony, aes(x = `End-Start (Intercept)`, y = after_stat(count))) +
   )
 
 ggsave(filename = "./figures/size-distribution.png",
-       width = 150, height = 150, units = "mm", dpi = 300,
+       width = 200, height = 200, units = "mm", dpi = 300,
        bg = "white")

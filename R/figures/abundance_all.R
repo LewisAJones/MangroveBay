@@ -1,6 +1,6 @@
 # Header ----------------------------------------------------------------
 # Project: MangroveBay
-# File name: abundance.R
+# File name: abundance_all.R
 # Last updated: 2025-07-11
 # Author: Lewis A. Jones
 # Email: LewisA.Jones@outlook.com
@@ -54,22 +54,6 @@ abundance <- abundance %>%
             LIQR = quantile(x = Abundance, probs = 0.25),
             UIQR = quantile(x = Abundance, probs = 0.75))
 
-# Top 10
-# abundance <- abundance %>%
-#   group_by(Age, ReefZone) %>%
-#   mutate(rank = dense_rank(desc(Median))) %>%
-#   filter(rank <= 10)
-# Top 10 genera (note rank needs to be updated to capture top ten)
-genera <- abundance %>%
-  ungroup() %>%
-  mutate(rank = dense_rank(desc(Median))) %>%
-  filter(rank <= 23) %>%
-  .$Genus %>%
-  unique()
-
-abundance <- abundance %>%
-  filter(Genus %in% genera)
-
 # Generate plots --------------------------------------------------------
 p <- ggplot(data = abundance, aes(x = Genus, y = Median, colour = Genus, 
                                   fill = Genus)) +
@@ -78,18 +62,18 @@ p <- ggplot(data = abundance, aes(x = Genus, y = Median, colour = Genus,
   geom_text(aes(x = Genus, 
                 y = UIQR + 2.5, 
                 label = paste0(round(Median, 2), "%"),),
-            size = 2.75, angle = 90, vjust = 0.5, hjust = 0) +
+            size = 2.25, angle = 90, vjust = 0.5, hjust = 0) +
   geom_errorbar(aes(x = Genus, ymin = LIQR, ymax = UIQR), colour = "black") +
   scale_y_continuous(limits = c(0, 100)) +
   ylab("Abundance (%)") +
   xlab ("Genus") +
-  facet_wrap(Age~ReefZone, ncol = 1,
+  facet_wrap(Age~ReefZone, ncol = 1, 
              strip.position = "right", labeller = as_labeller(labs)) +
   theme_bw() +
   theme(legend.position = "none",
         legend.title = element_blank(),
         plot.margin = margin(10, 5, 5, 5, unit = "mm"),
-        axis.text.x = element_text(face = c("italic"), size = 10,
+        axis.text.x = element_text(face = c("italic"), size = 8,
                                    angle = 90, vjust = 0.5, hjust = 1))
 
 build <- ggplot_build(p)
@@ -98,6 +82,6 @@ default_colours <- unique(build$data[[1]][order(build$data[[1]]$x), ]$fill)
 p + theme(axis.text.x = element_text(colour = default_colours))
 
 # Arrange and save ------------------------------------------------------
-ggsave("figures/community_composition.png", dpi = 600,
+ggsave("figures/community_composition_all.png", dpi = 600,
        width = 210, height = 297, units = "mm", scale = 1)
 

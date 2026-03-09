@@ -38,3 +38,8 @@ nmds <- left_join(x = zone, y = nmds, by = "LT")
 
 # Save plot data
 saveRDS(nmds, "./results/NMDS_plot_data.RDS")
+
+# SIMPER ----------------------------------------------------------------
+simp <- summary(simper(abundance[, 1:(ncol(abundance)-3)], abundance$Age))
+write.csv(simp$Modern_MIS5e, "results/simper.csv", row.names = TRUE)
+        

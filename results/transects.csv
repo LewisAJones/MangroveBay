@@ -1,6 +1,26 @@
-"Age","ReefZone","TransectsPerZone","TransectMeanLength","TransectSDLength"
-"MIS5e","Reef edge",3,2110.33333333333,127.201939188573
-"MIS5e","Shallow reef slope",4,2174,157.285303403295
-"Modern","Deeper reef slope",6,2355.5,273.59002174787
-"Modern","Reef edge",6,2058.16666666667,41.3396500549614
-"Modern","Shallow reef slope",6,2376.16666666667,283.021848391015
+"LT","Age","ReefZone","NumberOfIntercepts","TransectLength","NumberOfCoralIntercepts","TransectCoralLength","ProportionCoral"
+"A1A2","Modern","Reef edge",124,2361,56,1160,0.49131723845828
+"A3A4","Modern","Reef edge",139,2572,43,959,0.372861586314152
+"A5A6","Modern","Reef edge",170,2625,62,810,0.308571428571429
+"B1B2","Modern","Shallow reef slope",248,3236,71,802,0.247836835599506
+"B3B4","Modern","Shallow reef slope",251,3703,74,774,0.209019713745612
+"B5B6","Modern","Shallow reef slope",200,2763,71,675,0.244299674267101
+"C1C2","Modern","Deeper reef slope",266,3068,115,972,0.316818774445893
+"C3C4","Modern","Deeper reef slope",304,3190,105,1116,0.349843260188088
+"C5C6","Modern","Deeper reef slope",317,3065,94,684,0.223164763458401
+"D1D2","Modern","Reef edge",151,2369,88,1516,0.639932460953989
+"D3D4","Modern","Reef edge",163,2294,82,1043,0.454664341761116
+"D5D6","Modern","Reef edge",118,2208,61,958,0.433876811594203
+"E1E2","Modern","Shallow reef slope",223,2956,92,946,0.320027063599459
+"E3E4","Modern","Shallow reef slope",406,3616,79,498,0.137721238938053
+"E5E6","Modern","Shallow reef slope",450,3965,117,957,0.241361916771753
+"F1F2","Modern","Deeper reef slope",234,2996,83,784,0.261682242990654
+"F3F4","Modern","Deeper reef slope",244,3554,68,619,0.174169949352842
+"F5F6","Modern","Deeper reef slope",347,4245,71,648,0.152650176678445
+"SB_1","MIS5e","Shallow reef slope",83,2254,50,1498,0.664596273291925
+"SB_2","MIS5e","Shallow reef slope",73,2224,53,1734,0.779676258992806
+"SB_3","MIS5e","Shallow reef slope",118,2631,68,1510,0.573926263778031
+"SB_4","MIS5e","Shallow reef slope",66,2000,47,1459,0.7295
+"SB_5","MIS5e","Reef edge",57,2415,42,2138,0.885300207039337
+"SB_6","MIS5e","Reef edge",80,2062,62,1642,0.79631425800194
+"SB_7","MIS5e","Reef edge",54,2080,39,1807,0.86875

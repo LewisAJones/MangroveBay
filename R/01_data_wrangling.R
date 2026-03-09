@@ -1,7 +1,7 @@
 # Header ----------------------------------------------------------------
 # Project: MangroveBay
 # File name: 01_data_wrangling.R
-# Last updated: 2025-05-28
+# Last updated: 2026-03-09
 # Author: Lewis A. Jones
 # Email: LewisA.Jones@outlook.com
 # Repository: https://github.com/LewisAJones/MangroveBay
@@ -16,21 +16,24 @@ library(worrms)
 library(beepr)
 
 # Load data -------------------------------------------------------------
-corals <- read_csv("data/Mangrove_Bay_2024-08-12.csv")
+corals <- read_csv("data/Mangrove_Bay_2026-03-01.csv")
 
 # Wrangling -------------------------------------------------------------
-# Add transect length
-corals %<>%
+# Add transect stats
+corals <- corals %>%
   group_by(LT) %>%
-  mutate(TransectLength = sum(`End-Start (Intercept)`)) %>%
-  relocate(TransectLength, .after = "End-Start (Intercept)")
-
-# Retain biological entities (those with AphiaID)
-corals %<>% filter(!is.na(AphiaID))
-corals$AphiaID <- as.numeric(corals$AphiaID)
+  mutate(NumberOfIntercepts = length(`End-Start (Intercept)`),
+         TransectLength = sum(`End-Start (Intercept)`)) %>%
+  filter(!is.na(AphiaID)) %>%
+  mutate(NumberOfCoralIntercepts = length(`End-Start (Intercept)`),
+         TransectCoralLength = sum(`End-Start (Intercept)`)) %>%
+  relocate(NumberOfIntercepts, TransectLength, 
+           NumberOfCoralIntercepts, TransectCoralLength,
+           .after = "End-Start (Intercept)")
 
 ## Update taxonomy using WoRMs ------------------------------------------
 # Get unique AphiaIDs
+corals$AphiaID <- as.numeric(corals$AphiaID)
 AphiaID <- unique(corals$AphiaID)
 # Get taxonomy based on WoRMs
 tax <- wm_classification_(id = AphiaID)[, c("id", "rank", "scientificname")]

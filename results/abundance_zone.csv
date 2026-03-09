@@ -1,0 +1,98 @@
+"Age","ReefZone","Genus","RawAbundance","Abundance","Total"
+"MIS5e","Reef edge","Acropora",228,0.0415527610716238,5487
+"MIS5e","Reef edge","Cyphastrea",21,0.00382722799343904,5487
+"MIS5e","Reef edge","Dipsastraea",37,0.00674321122653545,5487
+"MIS5e","Reef edge","Echinopora",738,0.134499726626572,5487
+"MIS5e","Reef edge","Favites",52,0.00947694550756333,5487
+"MIS5e","Reef edge","Galaxea",210,0.0382722799343904,5487
+"MIS5e","Reef edge","Goniastrea",196,0.035720794605431,5487
+"MIS5e","Reef edge","Hydnophora",33,0.00601421541826134,5487
+"MIS5e","Reef edge","Leptoria",107,0.0195006378713322,5487
+"MIS5e","Reef edge","Lobophyllia",134,0.0244213595771824,5487
+"MIS5e","Reef edge","Millepora",732,0.133406232914161,5487
+"MIS5e","Reef edge","Platygyra",114,0.0207763805358119,5487
+"MIS5e","Reef edge","Pocillopora",310,0.0564971751412429,5487
+"MIS5e","Reef edge","Polycyathus",11,0.00200473847275378,5487
+"MIS5e","Reef edge","Porites",2516,0.45853836340441,5487
+"MIS5e","Reef edge","Stylocoeniella",17,0.00309823218516494,5487
+"MIS5e","Reef edge","Turbinaria",31,0.00564971751412429,5487
+"MIS5e","Shallow reef slope","Acropora",81,0.0136065849151688,5953
+"MIS5e","Shallow reef slope","Cyphastrea",10,0.00167982529816899,5953
+"MIS5e","Shallow reef slope","Dipsastraea",281,0.0472030908785486,5953
+"MIS5e","Shallow reef slope","Echinopora",713,0.119771543759449,5953
+"MIS5e","Shallow reef slope","Favites",82,0.0137745674449857,5953
+"MIS5e","Shallow reef slope","Fungia",3,0.000503947589450697,5953
+"MIS5e","Shallow reef slope","Galaxea",773,0.129850495548463,5953
+"MIS5e","Shallow reef slope","Goniastrea",1172,0.196875524945406,5953
+"MIS5e","Shallow reef slope","Hydnophora",65,0.0109188644380984,5953
+"MIS5e","Shallow reef slope","Leptastrea",29,0.00487149336469007,5953
+"MIS5e","Shallow reef slope","Leptoria",17,0.00285570300688728,5953
+"MIS5e","Shallow reef slope","Lobophyllia",683,0.114732067864942,5953
+"MIS5e","Shallow reef slope","Millepora",157,0.0263732571812532,5953
+"MIS5e","Shallow reef slope","Montipora",89,0.014950445153704,5953
+"MIS5e","Shallow reef slope","Platygyra",242,0.0406517722156896,5953
+"MIS5e","Shallow reef slope","Pocillopora",594,0.099781622711238,5953
+"MIS5e","Shallow reef slope","Porites",896,0.150512346715942,5953
+"MIS5e","Shallow reef slope","Turbinaria",66,0.0110868469679153,5953
+"Modern","Deeper reef slope","Acanthastrea",13,0.00331463539010709,3922
+"Modern","Deeper reef slope","Acropora",409,0.104283528811831,3922
+"Modern","Deeper reef slope","Astreopora",3,0.000764915859255482,3922
+"Modern","Deeper reef slope","Coscinaraea",12,0.00305966343702193,3922
+"Modern","Deeper reef slope","Ctenactis",5,0.0012748597654258,3922
+"Modern","Deeper reef slope","Cyphastrea",64,0.0163182049974503,3922
+"Modern","Deeper reef slope","Dipsastraea",56,0.014278429372769,3922
+"Modern","Deeper reef slope","Echinophyllia",18,0.00458949515553289,3922
+"Modern","Deeper reef slope","Echinopora",122,0.0311065782763896,3922
+"Modern","Deeper reef slope","Favites",10,0.00254971953085161,3922
+"Modern","Deeper reef slope","Galaxea",10,0.00254971953085161,3922
+"Modern","Deeper reef slope","Goniastrea",435,0.110912799592045,3922
+"Modern","Deeper reef slope","Gyrosmilia",3,0.000764915859255482,3922
+"Modern","Deeper reef slope","Leptastrea",64,0.0163182049974503,3922
+"Modern","Deeper reef slope","Merulina",13,0.00331463539010709,3922
+"Modern","Deeper reef slope","Millepora",44,0.0112187659357471,3922
+"Modern","Deeper reef slope","Montipora",143,0.036460989291178,3922
+"Modern","Deeper reef slope","Oxypora",3,0.000764915859255482,3922
+"Modern","Deeper reef slope","Paramontastraea",72,0.0183579806221316,3922
+"Modern","Deeper reef slope","Pavona",27,0.00688424273329934,3922
+"Modern","Deeper reef slope","Pocillopora",184,0.0469148393676696,3922
+"Modern","Deeper reef slope","Porites",2061,0.525497195308515,3922
+"Modern","Deeper reef slope","Psammocora",48,0.0122386537480877,3922
+"Modern","Deeper reef slope","Seriatopora",35,0.00892401835798062,3922
+"Modern","Deeper reef slope","Stylocoeniella",25,0.00637429882712902,3922
+"Modern","Deeper reef slope","Stylophora",38,0.0096889342172361,3922
+"Modern","Deeper reef slope","Turbinaria",5,0.0012748597654258,3922
+"Modern","Reef edge","Acropora",140,0.0227198961376177,6162
+"Modern","Reef edge","Cyphastrea",9,0.00146056475170399,6162
+"Modern","Reef edge","Dipsastraea",32,0.00519311911716975,6162
+"Modern","Reef edge","Favites",4,0.000649139889646219,6162
+"Modern","Reef edge","Goniastrea",66,0.0107108081791626,6162
+"Modern","Reef edge","Millepora",3020,0.490100616682895,6162
+"Modern","Reef edge","Montipora",66,0.0107108081791626,6162
+"Modern","Reef edge","Pavona",11,0.0017851346965271,6162
+"Modern","Reef edge","Pocillopora",1249,0.202693930542032,6162
+"Modern","Reef edge","Porites",1532,0.248620577734502,6162
+"Modern","Reef edge","Stylophora",33,0.0053554040895813,6162
+"Modern","Shallow reef slope","Acropora",421,0.115342465753425,3650
+"Modern","Shallow reef slope","Astreopora",15,0.00410958904109589,3650
+"Modern","Shallow reef slope","Coscinaraea",15,0.00410958904109589,3650
+"Modern","Shallow reef slope","Ctenactis",31,0.00849315068493151,3650
+"Modern","Shallow reef slope","Cyphastrea",65,0.0178082191780822,3650
+"Modern","Shallow reef slope","Dipsastraea",74,0.0202739726027397,3650
+"Modern","Shallow reef slope","Echinopora",10,0.00273972602739726,3650
+"Modern","Shallow reef slope","Favites",16,0.00438356164383562,3650
+"Modern","Shallow reef slope","Galaxea",3,0.000821917808219178,3650
+"Modern","Shallow reef slope","Gardineroseris",17,0.00465753424657534,3650
+"Modern","Shallow reef slope","Goniastrea",419,0.114794520547945,3650
+"Modern","Shallow reef slope","Leptastrea",37,0.0101369863013699,3650
+"Modern","Shallow reef slope","Leptoseris",6,0.00164383561643836,3650
+"Modern","Shallow reef slope","Millepora",120,0.0328767123287671,3650
+"Modern","Shallow reef slope","Montipora",267,0.0731506849315068,3650
+"Modern","Shallow reef slope","Oxypora",10,0.00273972602739726,3650
+"Modern","Shallow reef slope","Pachyseris",8,0.00219178082191781,3650
+"Modern","Shallow reef slope","Pavona",39,0.0106849315068493,3650
+"Modern","Shallow reef slope","Pocillopora",661,0.181095890410959,3650
+"Modern","Shallow reef slope","Porites",1348,0.369315068493151,3650
+"Modern","Shallow reef slope","Psammocora",5,0.00136986301369863,3650
+"Modern","Shallow reef slope","Seriatopora",20,0.00547945205479452,3650
+"Modern","Shallow reef slope","Stylocoeniella",3,0.000821917808219178,3650
+"Modern","Shallow reef slope","Stylophora",40,0.010958904109589,3650

@@ -109,13 +109,53 @@ write.csv(abundance_mat, "results/abundance_matrix_transect.csv", row.names = FA
 # Calculate diversity metrics per transect
 indices <- abundance_mat %>%
   select(-c("Age", "LT", "ReefZone")) %>%
-  reframe(alpha = specnumber(.),
-          shannon = diversity(x = ., index = "shannon"),
-          pielou = shannon / log(alpha)) %>%
+  reframe(Alpha = specnumber(.),
+          Shannon = diversity(x = ., index = "shannon"),
+          Pielou = Shannon / log(Alpha)) %>%
   mutate(LT = abundance_mat$LT,
          Age = abundance_mat$Age,
-         ReefZone = abundance_mat$ReefZone)
+         ReefZone = abundance_mat$ReefZone) %>%
+  pivot_longer(cols = Alpha:Pielou, names_to = "Name") %>%
+  group_by(LT, Age, ReefZone, Name) %>%
+  summarise(Median = median(value),
+            LQR = quantile(value, 0.25),
+            UQR = quantile(value, 0.75))
+# Save
 write.csv(indices, "results/diversity_indices_transect.csv", row.names = FALSE)
+
+# Calculate diversity metrics per zone (transect average)
+indices <- abundance_mat %>%
+  select(-c("Age", "LT", "ReefZone")) %>%
+  reframe(Alpha = specnumber(.),
+          Shannon = diversity(x = ., index = "shannon"),
+          Pielou = Shannon / log(Alpha)) %>%
+  mutate(LT = abundance_mat$LT,
+         Age = abundance_mat$Age,
+         ReefZone = abundance_mat$ReefZone) %>%
+  pivot_longer(cols = Alpha:Pielou, names_to = "Name") %>%
+  group_by(Age, ReefZone, Name) %>%
+  summarise(Median = median(value),
+            LQR = quantile(value, 0.25),
+            UQR = quantile(value, 0.75))
+# Save
+write.csv(indices, "results/diversity_indices_zone.csv", row.names = FALSE)
+
+# Calculate diversity metrics per age (transect average)
+indices <- abundance_mat %>%
+  select(-c("Age", "LT", "ReefZone")) %>%
+  reframe(Alpha = specnumber(.),
+          Shannon = diversity(x = ., index = "shannon"),
+          Pielou = Shannon / log(Alpha)) %>%
+  mutate(LT = abundance_mat$LT,
+         Age = abundance_mat$Age,
+         ReefZone = abundance_mat$ReefZone) %>%
+  pivot_longer(cols = Alpha:Pielou, names_to = "Name") %>%
+  group_by(Age, Name) %>%
+  summarise(Median = median(value),
+            LQR = quantile(value, 0.25),
+            UQR = quantile(value, 0.75))
+# Save
+write.csv(indices, "results/diversity_indices_age.csv", row.names = FALSE)
 
 # Calculate abundance of each coral genus per zone
 abundance <- corals %>%
@@ -142,17 +182,6 @@ abundance_mat <- abundance %>%
          ReefZone = sub(".*\\-", "", row.names(.)))
 write.csv(abundance_mat, "results/abundance_matrix_zone.csv", row.names = FALSE)
 
-# Calculate diversity metrics per transect
-indices <- abundance_mat %>%
-  select(-c("Age", "ReefZone")) %>%
-  reframe(alpha = specnumber(.),
-          shannon = diversity(x = ., index = "shannon"),
-          pielou = shannon / log(alpha)) %>%
-  mutate(LT = abundance_mat$LT,
-         Age = abundance_mat$Age,
-         ReefZone = abundance_mat$ReefZone)
-write.csv(indices, "results/diversity_indices_zone.csv", row.names = FALSE)
-
 # Calculate abundance of each coral genus per age
 abundance <- corals %>%
   # Add transect proportion
@@ -175,15 +204,6 @@ abundance_mat <- abundance %>%
   as.data.frame() %>%
   mutate(Age = row.names(.))
 write.csv(abundance_mat, "results/abundance_matrix_zone.csv", row.names = FALSE)
-
-# Calculate diversity metrics per transect
-indices <- abundance_mat %>%
-  select(-c("Age")) %>%
-  reframe(alpha = specnumber(.),
-          shannon = diversity(x = ., index = "shannon"),
-          pielou = shannon / log(alpha)) %>%
-  mutate(Age = abundance_mat$Age)
-write.csv(indices, "results/diversity_indices_age.csv", row.names = FALSE)
 
 # Wrap up ---------------------------------------------------------------
 # Alert

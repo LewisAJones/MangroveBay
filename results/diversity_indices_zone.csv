@@ -1,6 +1,16 @@
-"alpha","shannon","pielou","Age","ReefZone"
-17,1.87195263231466,0.66071714516022,"MIS5e","Reef edge"
-18,2.30961233691587,0.799071029740821,"MIS5e","Shallow reef slope"
-27,1.86033790160007,0.564450844272346,"Modern","Deeper reef slope"
-11,1.28314598663901,0.535113439354491,"Modern","Reef edge"
-24,2.01377967766598,0.633651846433796,"Modern","Shallow reef slope"
+"Age","ReefZone","Name","Median","LQR","UQR"
+"MIS5e","Reef edge","Alpha",11,10.5,13
+"MIS5e","Reef edge","Pielou",0.642229293426876,0.607122802732718,0.76110775056596
+"MIS5e","Reef edge","Shannon",1.47878759732882,1.42521140396482,1.93091721203582
+"MIS5e","Shallow reef slope","Alpha",13.5,13,14.25
+"MIS5e","Shallow reef slope","Pielou",0.826939724688028,0.803068694719362,0.835682387171381
+"MIS5e","Shallow reef slope","Shannon",2.12105851549798,2.07349876781306,2.17409294806273
+"Modern","Deeper reef slope","Alpha",11,8.5,12.75
+"Modern","Deeper reef slope","Pielou",0.606240275921097,0.409752078964255,0.764246342374614
+"Modern","Deeper reef slope","Shannon",1.40602663407504,0.83599079047959,1.9137137109375
+"Modern","Reef edge","Alpha",7,6.25,7.75
+"Modern","Reef edge","Pielou",0.627724556966183,0.511612607305701,0.660003567846452
+"Modern","Reef edge","Shannon",1.06760001658727,0.942834507487421,1.26007751372629
+"Modern","Shallow reef slope","Alpha",13,10.75,13.75
+"Modern","Shallow reef slope","Pielou",0.682038170196672,0.536638289014056,0.743206394494048
+"Modern","Shallow reef slope","Shannon",1.7493933664102,1.21986923712581,1.94779575129683

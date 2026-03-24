@@ -1,7 +1,7 @@
 # Header ----------------------------------------------------------------
 # Project: MangroveBay
 # File name: abundance.R
-# Last updated: 2025-07-11
+# Last updated: 2026-03-10
 # Author: Lewis A. Jones
 # Email: LewisA.Jones@outlook.com
 # Repository: https://github.com/LewisAJones/MangroveBay
@@ -12,9 +12,34 @@ library(ggpubr)
 library(tidyverse)
 library(ggtext)
 
+# Age -------------------------------------------------------------------
+indices <- read.csv("results/abundance_age.csv")
+
+indices %>%
+  mutate(Abundance = Abundance * 100) %>%
+  mutate(Age = factor(Age, levels = c("Modern", "MIS5e"))) %>%
+  ggplot(., aes(x = Genus, y = Abundance, fill = Genus, label = round(Abundance, 2))) +
+  geom_col(colour = "black") +
+  geom_text(vjust = 1.25, size = 4) +
+  ylab("Value") +
+  facet_wrap(~Age, nrow = 2, strip.position = "right") + 
+  theme_bw() +
+  theme(legend.position = "none")
+ggsave("figures/abundance_age.png", 
+       height = 100, width = 150, units = "mm", dpi = 300)
+
+
+# Zone ------------------------------------------------------------------
+
+
+# Transect --------------------------------------------------------------
+
+
+
+
 # Load data -------------------------------------------------------------
-abundance <- read_csv("./results/abundance.csv")
-coverage <- read_csv("./results/coverage.csv")
+abundance <- read_csv("results/abundance.csv")
+coverage <- read_csv("results/coverage.csv")
 
 # Update names
 coverage$ReefZone[which(coverage$Age == "MIS5e" & 

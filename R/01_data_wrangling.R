@@ -1,7 +1,7 @@
 # Header ----------------------------------------------------------------
 # Project: MangroveBay
 # File name: 01_data_wrangling.R
-# Last updated: 2026-03-09
+# Last updated: 2026-04-15
 # Author: Lewis A. Jones
 # Email: LewisA.Jones@outlook.com
 # Repository: https://github.com/LewisAJones/MangroveBay
@@ -97,13 +97,26 @@ corals$Rank[which(corals$Genus == "Millepora")] <- "Genus"
 # Rename reef slope (fossil)
 corals$ReefZone[which(corals$ReefZone == "Reef slope")] <- "Shallow reef slope"
 
+# Categories ------------------------------------------------------------
+# Drop CDA (Coral Dead Algae)
+corals <- corals %>%
+  filter_out(Category == "CDA")
+# Update growth form
+corals <- corals %>%
+  # Combine CM/CS (Coral Massive/Coral Submassive)
+  mutate(Category = if_else(Category == "CS", "CM", Category)) %>%
+  # Collapse to other where poorly defined
+  mutate(Category = if_else(Category == "CE/CD", "Other", Category)) %>%
+  mutate(Category = if_else(Category == "CE/CF", "Other", Category)) %>%
+  mutate(Category = if_else(Category == "CE/CS", "Other", Category)) %>%
+  mutate(Category = if_else(is.na(Category), "Other", Category))
 # Save ------------------------------------------------------------------
 # Sort by index
 corals <- corals[order(corals$Index), ]
 # Add new index
 corals$Index <- 1:nrow(corals)
 # Save csv
-write.csv(corals, "./data/Mangrove_Bay_corals.csv",
+write.csv(corals, "data/Mangrove_Bay_corals.csv",
           row.names = FALSE)
 # Alert
 beepr::beep(sound = 2)

@@ -8,112 +8,94 @@
 "A3A4","Modern","Reef edge","ACB",2,41,0.048780487804878
 "A3A4","Modern","Reef edge","CB",14,41,0.341463414634146
 "A3A4","Modern","Reef edge","CE",1,41,0.024390243902439
-"A3A4","Modern","Reef edge","CM",2,41,0.048780487804878
+"A3A4","Modern","Reef edge","CM",7,41,0.170731707317073
 "A3A4","Modern","Reef edge","CME",17,41,0.414634146341463
-"A3A4","Modern","Reef edge","CS",5,41,0.121951219512195
 "A5A6","Modern","Reef edge","ACB",2,61,0.0327868852459016
 "A5A6","Modern","Reef edge","CB",22,61,0.360655737704918
 "A5A6","Modern","Reef edge","CE",3,61,0.0491803278688525
-"A5A6","Modern","Reef edge","CM",6,61,0.0983606557377049
+"A5A6","Modern","Reef edge","CM",28,61,0.459016393442623
 "A5A6","Modern","Reef edge","CME",6,61,0.0983606557377049
-"A5A6","Modern","Reef edge","CS",22,61,0.360655737704918
 "B1B2","Modern","Shallow reef slope","ACB",2,64,0.03125
 "B1B2","Modern","Shallow reef slope","ACD",2,64,0.03125
 "B1B2","Modern","Shallow reef slope","CB",15,64,0.234375
 "B1B2","Modern","Shallow reef slope","CE",19,64,0.296875
 "B1B2","Modern","Shallow reef slope","CF",1,64,0.015625
-"B1B2","Modern","Shallow reef slope","CM",7,64,0.109375
+"B1B2","Modern","Shallow reef slope","CM",18,64,0.28125
 "B1B2","Modern","Shallow reef slope","CME",5,64,0.078125
-"B1B2","Modern","Shallow reef slope","CS",11,64,0.171875
-"B1B2","Modern","Shallow reef slope",NA,2,64,0.03125
+"B1B2","Modern","Shallow reef slope","Other",2,64,0.03125
 "B3B4","Modern","Shallow reef slope","ACB",6,68,0.0882352941176471
 "B3B4","Modern","Shallow reef slope","CB",11,68,0.161764705882353
 "B3B4","Modern","Shallow reef slope","CE",22,68,0.323529411764706
-"B3B4","Modern","Shallow reef slope","CM",26,68,0.382352941176471
-"B3B4","Modern","Shallow reef slope","CS",3,68,0.0441176470588235
+"B3B4","Modern","Shallow reef slope","CM",29,68,0.426470588235294
 "B5B6","Modern","Shallow reef slope","ACB",6,47,0.127659574468085
 "B5B6","Modern","Shallow reef slope","CB",10,47,0.212765957446809
 "B5B6","Modern","Shallow reef slope","CE",18,47,0.382978723404255
-"B5B6","Modern","Shallow reef slope","CM",2,47,0.0425531914893617
+"B5B6","Modern","Shallow reef slope","CM",11,47,0.234042553191489
 "B5B6","Modern","Shallow reef slope","CME",1,47,0.0212765957446809
 "B5B6","Modern","Shallow reef slope","CMR",1,47,0.0212765957446809
-"B5B6","Modern","Shallow reef slope","CS",9,47,0.191489361702128
 "C1C2","Modern","Deeper reef slope","ACB",5,97,0.0515463917525773
 "C1C2","Modern","Deeper reef slope","CB",4,97,0.0412371134020619
 "C1C2","Modern","Deeper reef slope","CE",38,97,0.391752577319588
-"C1C2","Modern","Deeper reef slope","CM",35,97,0.360824742268041
+"C1C2","Modern","Deeper reef slope","CM",45,97,0.463917525773196
 "C1C2","Modern","Deeper reef slope","CME",5,97,0.0515463917525773
-"C1C2","Modern","Deeper reef slope","CS",10,97,0.103092783505155
 "C3C4","Modern","Deeper reef slope","ACB",6,73,0.0821917808219178
 "C3C4","Modern","Deeper reef slope","ACD",3,73,0.0410958904109589
 "C3C4","Modern","Deeper reef slope","CB",5,73,0.0684931506849315
 "C3C4","Modern","Deeper reef slope","CE",18,73,0.246575342465753
 "C3C4","Modern","Deeper reef slope","CF",1,73,0.0136986301369863
-"C3C4","Modern","Deeper reef slope","CM",23,73,0.315068493150685
-"C3C4","Modern","Deeper reef slope","CS",17,73,0.232876712328767
-"C5C6","Modern","Deeper reef slope","ACB",6,94,0.0638297872340425
-"C5C6","Modern","Deeper reef slope","CB",9,94,0.0957446808510638
-"C5C6","Modern","Deeper reef slope","CDA",8,94,0.0851063829787234
-"C5C6","Modern","Deeper reef slope","CE",12,94,0.127659574468085
-"C5C6","Modern","Deeper reef slope","CM",25,94,0.265957446808511
-"C5C6","Modern","Deeper reef slope","CME",1,94,0.0106382978723404
-"C5C6","Modern","Deeper reef slope","CS",33,94,0.351063829787234
-"D1D2","Modern","Reef edge","ACB",2,69,0.0289855072463768
-"D1D2","Modern","Reef edge","CB",11,69,0.159420289855072
-"D1D2","Modern","Reef edge","CD",3,69,0.0434782608695652
-"D1D2","Modern","Reef edge","CDA",2,69,0.0289855072463768
-"D1D2","Modern","Reef edge","CE",2,69,0.0289855072463768
-"D1D2","Modern","Reef edge","CME",13,69,0.188405797101449
-"D1D2","Modern","Reef edge","CS",36,69,0.521739130434783
+"C3C4","Modern","Deeper reef slope","CM",40,73,0.547945205479452
+"C5C6","Modern","Deeper reef slope","ACB",6,86,0.0697674418604651
+"C5C6","Modern","Deeper reef slope","CB",9,86,0.104651162790698
+"C5C6","Modern","Deeper reef slope","CE",12,86,0.13953488372093
+"C5C6","Modern","Deeper reef slope","CM",58,86,0.674418604651163
+"C5C6","Modern","Deeper reef slope","CME",1,86,0.0116279069767442
+"D1D2","Modern","Reef edge","ACB",2,67,0.0298507462686567
+"D1D2","Modern","Reef edge","CB",11,67,0.164179104477612
+"D1D2","Modern","Reef edge","CD",3,67,0.0447761194029851
+"D1D2","Modern","Reef edge","CE",2,67,0.0298507462686567
+"D1D2","Modern","Reef edge","CM",36,67,0.537313432835821
+"D1D2","Modern","Reef edge","CME",13,67,0.194029850746269
 "D3D4","Modern","Reef edge","ACB",3,71,0.0422535211267606
 "D3D4","Modern","Reef edge","CB",13,71,0.183098591549296
 "D3D4","Modern","Reef edge","CE",1,71,0.0140845070422535
-"D3D4","Modern","Reef edge","CM",3,71,0.0422535211267606
+"D3D4","Modern","Reef edge","CM",35,71,0.492957746478873
 "D3D4","Modern","Reef edge","CME",19,71,0.267605633802817
-"D3D4","Modern","Reef edge","CS",32,71,0.450704225352113
 "D5D6","Modern","Reef edge","ACB",1,56,0.0178571428571429
 "D5D6","Modern","Reef edge","CB",13,56,0.232142857142857
 "D5D6","Modern","Reef edge","CD",7,56,0.125
 "D5D6","Modern","Reef edge","CE",1,56,0.0178571428571429
+"D5D6","Modern","Reef edge","CM",21,56,0.375
 "D5D6","Modern","Reef edge","CME",13,56,0.232142857142857
-"D5D6","Modern","Reef edge","CS",21,56,0.375
-"E1E2","Modern","Shallow reef slope","ACB",3,70,0.0428571428571429
-"E1E2","Modern","Shallow reef slope","ACD",1,70,0.0142857142857143
-"E1E2","Modern","Shallow reef slope","CB",7,70,0.1
-"E1E2","Modern","Shallow reef slope","CDA",6,70,0.0857142857142857
-"E1E2","Modern","Shallow reef slope","CE",14,70,0.2
-"E1E2","Modern","Shallow reef slope","CM",7,70,0.1
-"E1E2","Modern","Shallow reef slope","CS",32,70,0.457142857142857
-"E3E4","Modern","Shallow reef slope","ACB",2,67,0.0298507462686567
-"E3E4","Modern","Shallow reef slope","CB",5,67,0.0746268656716418
-"E3E4","Modern","Shallow reef slope","CDA",4,67,0.0597014925373134
-"E3E4","Modern","Shallow reef slope","CE",12,67,0.17910447761194
-"E3E4","Modern","Shallow reef slope","CM",1,67,0.0149253731343284
-"E3E4","Modern","Shallow reef slope","CS",43,67,0.641791044776119
+"E1E2","Modern","Shallow reef slope","ACB",3,64,0.046875
+"E1E2","Modern","Shallow reef slope","ACD",1,64,0.015625
+"E1E2","Modern","Shallow reef slope","CB",7,64,0.109375
+"E1E2","Modern","Shallow reef slope","CE",14,64,0.21875
+"E1E2","Modern","Shallow reef slope","CM",39,64,0.609375
+"E3E4","Modern","Shallow reef slope","ACB",2,63,0.0317460317460317
+"E3E4","Modern","Shallow reef slope","CB",5,63,0.0793650793650794
+"E3E4","Modern","Shallow reef slope","CE",12,63,0.19047619047619
+"E3E4","Modern","Shallow reef slope","CM",44,63,0.698412698412698
 "E5E6","Modern","Shallow reef slope","ACB",3,85,0.0352941176470588
 "E5E6","Modern","Shallow reef slope","ACD",1,85,0.0117647058823529
 "E5E6","Modern","Shallow reef slope","CB",10,85,0.117647058823529
 "E5E6","Modern","Shallow reef slope","CE",39,85,0.458823529411765
+"E5E6","Modern","Shallow reef slope","CM",23,85,0.270588235294118
 "E5E6","Modern","Shallow reef slope","CME",7,85,0.0823529411764706
 "E5E6","Modern","Shallow reef slope","CMR",2,85,0.0235294117647059
-"E5E6","Modern","Shallow reef slope","CS",23,85,0.270588235294118
-"F1F2","Modern","Deeper reef slope","CB",5,63,0.0793650793650794
-"F1F2","Modern","Deeper reef slope","CDA",6,63,0.0952380952380952
-"F1F2","Modern","Deeper reef slope","CE",16,63,0.253968253968254
-"F1F2","Modern","Deeper reef slope","CM",32,63,0.507936507936508
-"F1F2","Modern","Deeper reef slope","CME",4,63,0.0634920634920635
+"F1F2","Modern","Deeper reef slope","CB",5,57,0.087719298245614
+"F1F2","Modern","Deeper reef slope","CE",16,57,0.280701754385965
+"F1F2","Modern","Deeper reef slope","CM",32,57,0.56140350877193
+"F1F2","Modern","Deeper reef slope","CME",4,57,0.0701754385964912
 "F3F4","Modern","Deeper reef slope","ACB",1,66,0.0151515151515152
 "F3F4","Modern","Deeper reef slope","CB",2,66,0.0303030303030303
 "F3F4","Modern","Deeper reef slope","CE",12,66,0.181818181818182
-"F3F4","Modern","Deeper reef slope","CM",47,66,0.712121212121212
+"F3F4","Modern","Deeper reef slope","CM",50,66,0.757575757575758
 "F3F4","Modern","Deeper reef slope","CMR",1,66,0.0151515151515152
-"F3F4","Modern","Deeper reef slope","CS",3,66,0.0454545454545455
 "F5F6","Modern","Deeper reef slope","ACB",1,71,0.0140845070422535
 "F5F6","Modern","Deeper reef slope","CB",1,71,0.0140845070422535
 "F5F6","Modern","Deeper reef slope","CE",14,71,0.197183098591549
-"F5F6","Modern","Deeper reef slope","CM",35,71,0.492957746478873
+"F5F6","Modern","Deeper reef slope","CM",54,71,0.76056338028169
 "F5F6","Modern","Deeper reef slope","CME",1,71,0.0140845070422535
-"F5F6","Modern","Deeper reef slope","CS",19,71,0.267605633802817
 "SB_1","MIS5e","Shallow reef slope","AC",1,49,0.0204081632653061
 "SB_1","MIS5e","Shallow reef slope","CB",1,49,0.0204081632653061
 "SB_1","MIS5e","Shallow reef slope","CD",5,49,0.102040816326531
@@ -128,28 +110,24 @@
 "SB_2","MIS5e","Shallow reef slope","CD",4,45,0.0888888888888889
 "SB_2","MIS5e","Shallow reef slope","CE",5,45,0.111111111111111
 "SB_2","MIS5e","Shallow reef slope","CF",3,45,0.0666666666666667
-"SB_2","MIS5e","Shallow reef slope","CM",20,45,0.444444444444444
+"SB_2","MIS5e","Shallow reef slope","CM",22,45,0.488888888888889
 "SB_2","MIS5e","Shallow reef slope","CME",3,45,0.0666666666666667
-"SB_2","MIS5e","Shallow reef slope","CS",2,45,0.0444444444444444
 "SB_3","MIS5e","Shallow reef slope","AC",3,65,0.0461538461538462
 "SB_3","MIS5e","Shallow reef slope","ACB",1,65,0.0153846153846154
 "SB_3","MIS5e","Shallow reef slope","CB",11,65,0.169230769230769
 "SB_3","MIS5e","Shallow reef slope","CD",8,65,0.123076923076923
 "SB_3","MIS5e","Shallow reef slope","CE",9,65,0.138461538461538
-"SB_3","MIS5e","Shallow reef slope","CE/CF",1,65,0.0153846153846154
-"SB_3","MIS5e","Shallow reef slope","CM",18,65,0.276923076923077
+"SB_3","MIS5e","Shallow reef slope","CM",28,65,0.430769230769231
 "SB_3","MIS5e","Shallow reef slope","CME",4,65,0.0615384615384615
-"SB_3","MIS5e","Shallow reef slope","CS",10,65,0.153846153846154
+"SB_3","MIS5e","Shallow reef slope","Other",1,65,0.0153846153846154
 "SB_4","MIS5e","Shallow reef slope","AC",1,45,0.0222222222222222
 "SB_4","MIS5e","Shallow reef slope","CB",6,45,0.133333333333333
 "SB_4","MIS5e","Shallow reef slope","CD",2,45,0.0444444444444444
 "SB_4","MIS5e","Shallow reef slope","CE",3,45,0.0666666666666667
-"SB_4","MIS5e","Shallow reef slope","CE/CD",1,45,0.0222222222222222
-"SB_4","MIS5e","Shallow reef slope","CE/CS",1,45,0.0222222222222222
 "SB_4","MIS5e","Shallow reef slope","CF",3,45,0.0666666666666667
-"SB_4","MIS5e","Shallow reef slope","CM",18,45,0.4
+"SB_4","MIS5e","Shallow reef slope","CM",27,45,0.6
 "SB_4","MIS5e","Shallow reef slope","CME",1,45,0.0222222222222222
-"SB_4","MIS5e","Shallow reef slope","CS",9,45,0.2
+"SB_4","MIS5e","Shallow reef slope","Other",2,45,0.0444444444444444
 "SB_5","MIS5e","Reef edge","AC",2,42,0.0476190476190476
 "SB_5","MIS5e","Reef edge","ACB",1,42,0.0238095238095238
 "SB_5","MIS5e","Reef edge","ACD",3,42,0.0714285714285714
@@ -157,9 +135,8 @@
 "SB_5","MIS5e","Reef edge","CD",6,42,0.142857142857143
 "SB_5","MIS5e","Reef edge","CE",1,42,0.0238095238095238
 "SB_5","MIS5e","Reef edge","CF",2,42,0.0476190476190476
-"SB_5","MIS5e","Reef edge","CM",16,42,0.380952380952381
+"SB_5","MIS5e","Reef edge","CM",18,42,0.428571428571429
 "SB_5","MIS5e","Reef edge","CME",5,42,0.119047619047619
-"SB_5","MIS5e","Reef edge","CS",2,42,0.0476190476190476
 "SB_6","MIS5e","Reef edge","AC",3,59,0.0508474576271186
 "SB_6","MIS5e","Reef edge","ACB",1,59,0.0169491525423729
 "SB_6","MIS5e","Reef edge","ACD",1,59,0.0169491525423729
@@ -167,12 +144,10 @@
 "SB_6","MIS5e","Reef edge","CD",3,59,0.0508474576271186
 "SB_6","MIS5e","Reef edge","CE",2,59,0.0338983050847458
 "SB_6","MIS5e","Reef edge","CF",8,59,0.135593220338983
-"SB_6","MIS5e","Reef edge","CM",21,59,0.35593220338983
+"SB_6","MIS5e","Reef edge","CM",24,59,0.406779661016949
 "SB_6","MIS5e","Reef edge","CME",13,59,0.220338983050847
-"SB_6","MIS5e","Reef edge","CS",3,59,0.0508474576271186
 "SB_7","MIS5e","Reef edge","ACD",5,39,0.128205128205128
 "SB_7","MIS5e","Reef edge","CD",3,39,0.0769230769230769
 "SB_7","MIS5e","Reef edge","CF",5,39,0.128205128205128
-"SB_7","MIS5e","Reef edge","CM",11,39,0.282051282051282
+"SB_7","MIS5e","Reef edge","CM",17,39,0.435897435897436
 "SB_7","MIS5e","Reef edge","CME",9,39,0.230769230769231
-"SB_7","MIS5e","Reef edge","CS",6,39,0.153846153846154

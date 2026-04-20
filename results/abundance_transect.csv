@@ -97,23 +97,23 @@
 "C3C4","Modern","Deeper reef slope","Porites",230,0.357142857142857,644
 "C3C4","Modern","Deeper reef slope","Stylophora",12,0.0186335403726708,644
 "C3C4","Modern","Deeper reef slope","Turbinaria",5,0.0077639751552795,644
-"C5C6","Modern","Deeper reef slope","Acropora",120,0.175438596491228,684
-"C5C6","Modern","Deeper reef slope","Dipsastraea",15,0.0219298245614035,684
-"C5C6","Modern","Deeper reef slope","Echinophyllia",6,0.0087719298245614,684
-"C5C6","Modern","Deeper reef slope","Echinopora",57,0.0833333333333333,684
-"C5C6","Modern","Deeper reef slope","Galaxea",10,0.0146198830409357,684
-"C5C6","Modern","Deeper reef slope","Goniastrea",208,0.304093567251462,684
-"C5C6","Modern","Deeper reef slope","Millepora",3,0.0043859649122807,684
-"C5C6","Modern","Deeper reef slope","Montipora",48,0.0701754385964912,684
-"C5C6","Modern","Deeper reef slope","Paramontastraea",3,0.0043859649122807,684
-"C5C6","Modern","Deeper reef slope","Pocillopora",63,0.0921052631578947,684
-"C5C6","Modern","Deeper reef slope","Porites",134,0.195906432748538,684
-"C5C6","Modern","Deeper reef slope","Seriatopora",17,0.0248538011695906,684
-"D1D2","Modern","Reef edge","Acropora",19,0.0134560906515581,1412
-"D1D2","Modern","Reef edge","Millepora",373,0.264164305949009,1412
-"D1D2","Modern","Reef edge","Montipora",31,0.0219546742209632,1412
-"D1D2","Modern","Reef edge","Pocillopora",125,0.0885269121813031,1412
-"D1D2","Modern","Reef edge","Porites",864,0.611898016997167,1412
+"C5C6","Modern","Deeper reef slope","Acropora",120,0.183206106870229,655
+"C5C6","Modern","Deeper reef slope","Dipsastraea",15,0.0229007633587786,655
+"C5C6","Modern","Deeper reef slope","Echinophyllia",6,0.00916030534351145,655
+"C5C6","Modern","Deeper reef slope","Echinopora",57,0.0870229007633588,655
+"C5C6","Modern","Deeper reef slope","Galaxea",10,0.0152671755725191,655
+"C5C6","Modern","Deeper reef slope","Goniastrea",208,0.317557251908397,655
+"C5C6","Modern","Deeper reef slope","Millepora",3,0.00458015267175573,655
+"C5C6","Modern","Deeper reef slope","Montipora",40,0.0610687022900763,655
+"C5C6","Modern","Deeper reef slope","Paramontastraea",3,0.00458015267175573,655
+"C5C6","Modern","Deeper reef slope","Pocillopora",63,0.0961832061068702,655
+"C5C6","Modern","Deeper reef slope","Porites",113,0.172519083969466,655
+"C5C6","Modern","Deeper reef slope","Seriatopora",17,0.0259541984732824,655
+"D1D2","Modern","Reef edge","Acropora",19,0.0138483965014577,1372
+"D1D2","Modern","Reef edge","Millepora",373,0.271865889212828,1372
+"D1D2","Modern","Reef edge","Montipora",31,0.0225947521865889,1372
+"D1D2","Modern","Reef edge","Pocillopora",125,0.0911078717201166,1372
+"D1D2","Modern","Reef edge","Porites",824,0.600583090379009,1372
 "D3D4","Modern","Reef edge","Acropora",46,0.0481675392670157,955
 "D3D4","Modern","Reef edge","Cyphastrea",1,0.00104712041884817,955
 "D3D4","Modern","Reef edge","Goniastrea",18,0.018848167539267,955
@@ -127,21 +127,21 @@
 "D5D6","Modern","Reef edge","Pavona",1,0.00109769484083425,911
 "D5D6","Modern","Reef edge","Pocillopora",257,0.282107574094402,911
 "D5D6","Modern","Reef edge","Porites",162,0.177826564215148,911
-"E1E2","Modern","Shallow reef slope","Acropora",46,0.0620782726045884,741
-"E1E2","Modern","Shallow reef slope","Leptastrea",12,0.0161943319838057,741
-"E1E2","Modern","Shallow reef slope","Pavona",10,0.0134952766531714,741
-"E1E2","Modern","Shallow reef slope","Pocillopora",121,0.163292847503374,741
-"E1E2","Modern","Shallow reef slope","Porites",552,0.744939271255061,741
-"E3E4","Modern","Shallow reef slope","Acropora",10,0.0286532951289398,349
-"E3E4","Modern","Shallow reef slope","Cyphastrea",4,0.0114613180515759,349
-"E3E4","Modern","Shallow reef slope","Gardineroseris",11,0.0315186246418338,349
-"E3E4","Modern","Shallow reef slope","Goniastrea",15,0.0429799426934097,349
-"E3E4","Modern","Shallow reef slope","Leptoseris",6,0.0171919770773639,349
-"E3E4","Modern","Shallow reef slope","Montipora",7,0.0200573065902579,349
-"E3E4","Modern","Shallow reef slope","Pavona",7,0.0200573065902579,349
-"E3E4","Modern","Shallow reef slope","Pocillopora",18,0.0515759312320917,349
-"E3E4","Modern","Shallow reef slope","Porites",262,0.750716332378223,349
-"E3E4","Modern","Shallow reef slope","Stylophora",9,0.0257879656160458,349
+"E1E2","Modern","Shallow reef slope","Acropora",46,0.0651558073654391,706
+"E1E2","Modern","Shallow reef slope","Leptastrea",12,0.0169971671388102,706
+"E1E2","Modern","Shallow reef slope","Pavona",10,0.0141643059490085,706
+"E1E2","Modern","Shallow reef slope","Pocillopora",101,0.143059490084986,706
+"E1E2","Modern","Shallow reef slope","Porites",537,0.760623229461757,706
+"E3E4","Modern","Shallow reef slope","Acropora",10,0.0289855072463768,345
+"E3E4","Modern","Shallow reef slope","Cyphastrea",4,0.0115942028985507,345
+"E3E4","Modern","Shallow reef slope","Gardineroseris",11,0.0318840579710145,345
+"E3E4","Modern","Shallow reef slope","Goniastrea",15,0.0434782608695652,345
+"E3E4","Modern","Shallow reef slope","Leptoseris",6,0.0173913043478261,345
+"E3E4","Modern","Shallow reef slope","Montipora",7,0.0202898550724638,345
+"E3E4","Modern","Shallow reef slope","Pavona",7,0.0202898550724638,345
+"E3E4","Modern","Shallow reef slope","Pocillopora",18,0.0521739130434783,345
+"E3E4","Modern","Shallow reef slope","Porites",258,0.747826086956521,345
+"E3E4","Modern","Shallow reef slope","Stylophora",9,0.0260869565217391,345
 "E5E6","Modern","Shallow reef slope","Acropora",84,0.145833333333333,576
 "E5E6","Modern","Shallow reef slope","Ctenactis",25,0.0434027777777778,576
 "E5E6","Modern","Shallow reef slope","Cyphastrea",14,0.0243055555555556,576
@@ -155,14 +155,14 @@
 "E5E6","Modern","Shallow reef slope","Porites",309,0.536458333333333,576
 "E5E6","Modern","Shallow reef slope","Psammocora",5,0.00868055555555556,576
 "E5E6","Modern","Shallow reef slope","Stylophora",24,0.0416666666666667,576
-"F1F2","Modern","Deeper reef slope","Cyphastrea",3,0.00490196078431373,612
-"F1F2","Modern","Deeper reef slope","Goniastrea",15,0.0245098039215686,612
-"F1F2","Modern","Deeper reef slope","Leptastrea",10,0.0163398692810458,612
-"F1F2","Modern","Deeper reef slope","Millepora",17,0.0277777777777778,612
-"F1F2","Modern","Deeper reef slope","Montipora",29,0.0473856209150327,612
-"F1F2","Modern","Deeper reef slope","Pocillopora",22,0.0359477124183007,612
-"F1F2","Modern","Deeper reef slope","Porites",501,0.818627450980392,612
-"F1F2","Modern","Deeper reef slope","Stylophora",15,0.0245098039215686,612
+"F1F2","Modern","Deeper reef slope","Cyphastrea",3,0.00532859680284192,563
+"F1F2","Modern","Deeper reef slope","Goniastrea",15,0.0266429840142096,563
+"F1F2","Modern","Deeper reef slope","Leptastrea",10,0.0177619893428064,563
+"F1F2","Modern","Deeper reef slope","Millepora",17,0.0301953818827709,563
+"F1F2","Modern","Deeper reef slope","Montipora",29,0.0515097690941385,563
+"F1F2","Modern","Deeper reef slope","Pocillopora",22,0.0390763765541741,563
+"F1F2","Modern","Deeper reef slope","Porites",452,0.802841918294849,563
+"F1F2","Modern","Deeper reef slope","Stylophora",15,0.0266429840142096,563
 "F3F4","Modern","Deeper reef slope","Acropora",36,0.0588235294117647,612
 "F3F4","Modern","Deeper reef slope","Ctenactis",5,0.00816993464052288,612
 "F3F4","Modern","Deeper reef slope","Goniastrea",50,0.0816993464052288,612

@@ -6,49 +6,39 @@
 "MIS5e","Reef edge","CD",12,140,0.0857142857142857
 "MIS5e","Reef edge","CE",3,140,0.0214285714285714
 "MIS5e","Reef edge","CF",15,140,0.107142857142857
-"MIS5e","Reef edge","CM",48,140,0.342857142857143
+"MIS5e","Reef edge","CM",59,140,0.421428571428571
 "MIS5e","Reef edge","CME",27,140,0.192857142857143
-"MIS5e","Reef edge","CS",11,140,0.0785714285714286
 "MIS5e","Shallow reef slope","AC",5,204,0.0245098039215686
 "MIS5e","Shallow reef slope","ACB",2,204,0.00980392156862745
 "MIS5e","Shallow reef slope","ACD",2,204,0.00980392156862745
 "MIS5e","Shallow reef slope","CB",23,204,0.112745098039216
 "MIS5e","Shallow reef slope","CD",19,204,0.0931372549019608
 "MIS5e","Shallow reef slope","CE",21,204,0.102941176470588
-"MIS5e","Shallow reef slope","CE/CD",1,204,0.00490196078431373
-"MIS5e","Shallow reef slope","CE/CF",1,204,0.00490196078431373
-"MIS5e","Shallow reef slope","CE/CS",1,204,0.00490196078431373
 "MIS5e","Shallow reef slope","CF",13,204,0.0637254901960784
-"MIS5e","Shallow reef slope","CM",85,204,0.416666666666667
+"MIS5e","Shallow reef slope","CM",106,204,0.519607843137255
 "MIS5e","Shallow reef slope","CME",9,204,0.0441176470588235
 "MIS5e","Shallow reef slope","CMR",1,204,0.00490196078431373
-"MIS5e","Shallow reef slope","CS",21,204,0.102941176470588
-"Modern","Deeper reef slope","ACB",19,464,0.040948275862069
-"Modern","Deeper reef slope","ACD",3,464,0.00646551724137931
-"Modern","Deeper reef slope","CB",26,464,0.0560344827586207
-"Modern","Deeper reef slope","CDA",14,464,0.0301724137931034
-"Modern","Deeper reef slope","CE",110,464,0.237068965517241
-"Modern","Deeper reef slope","CF",1,464,0.0021551724137931
-"Modern","Deeper reef slope","CM",197,464,0.424568965517241
-"Modern","Deeper reef slope","CME",11,464,0.0237068965517241
-"Modern","Deeper reef slope","CMR",1,464,0.0021551724137931
-"Modern","Deeper reef slope","CS",82,464,0.176724137931034
-"Modern","Reef edge","ACB",11,350,0.0314285714285714
-"Modern","Reef edge","CB",87,350,0.248571428571429
-"Modern","Reef edge","CD",11,350,0.0314285714285714
-"Modern","Reef edge","CDA",2,350,0.00571428571428571
-"Modern","Reef edge","CE",9,350,0.0257142857142857
-"Modern","Reef edge","CM",20,350,0.0571428571428571
-"Modern","Reef edge","CME",94,350,0.268571428571429
-"Modern","Reef edge","CS",116,350,0.331428571428571
-"Modern","Shallow reef slope","ACB",22,401,0.0548628428927681
-"Modern","Shallow reef slope","ACD",4,401,0.00997506234413965
-"Modern","Shallow reef slope","CB",58,401,0.144638403990025
-"Modern","Shallow reef slope","CDA",10,401,0.0249376558603491
-"Modern","Shallow reef slope","CE",124,401,0.309226932668329
-"Modern","Shallow reef slope","CF",1,401,0.00249376558603491
-"Modern","Shallow reef slope","CM",43,401,0.107231920199501
-"Modern","Shallow reef slope","CME",13,401,0.0324189526184539
-"Modern","Shallow reef slope","CMR",3,401,0.00748129675810474
-"Modern","Shallow reef slope","CS",121,401,0.301745635910224
-"Modern","Shallow reef slope",NA,2,401,0.00498753117206983
+"MIS5e","Shallow reef slope","Other",3,204,0.0147058823529412
+"Modern","Deeper reef slope","ACB",19,450,0.0422222222222222
+"Modern","Deeper reef slope","ACD",3,450,0.00666666666666667
+"Modern","Deeper reef slope","CB",26,450,0.0577777777777778
+"Modern","Deeper reef slope","CE",110,450,0.244444444444444
+"Modern","Deeper reef slope","CF",1,450,0.00222222222222222
+"Modern","Deeper reef slope","CM",279,450,0.62
+"Modern","Deeper reef slope","CME",11,450,0.0244444444444444
+"Modern","Deeper reef slope","CMR",1,450,0.00222222222222222
+"Modern","Reef edge","ACB",11,348,0.0316091954022989
+"Modern","Reef edge","CB",87,348,0.25
+"Modern","Reef edge","CD",11,348,0.0316091954022989
+"Modern","Reef edge","CE",9,348,0.0258620689655172
+"Modern","Reef edge","CM",136,348,0.390804597701149
+"Modern","Reef edge","CME",94,348,0.270114942528736
+"Modern","Shallow reef slope","ACB",22,391,0.0562659846547315
+"Modern","Shallow reef slope","ACD",4,391,0.010230179028133
+"Modern","Shallow reef slope","CB",58,391,0.148337595907928
+"Modern","Shallow reef slope","CE",124,391,0.317135549872123
+"Modern","Shallow reef slope","CF",1,391,0.00255754475703325
+"Modern","Shallow reef slope","CM",164,391,0.419437340153453
+"Modern","Shallow reef slope","CME",13,391,0.0332480818414322
+"Modern","Shallow reef slope","CMR",3,391,0.00767263427109974
+"Modern","Shallow reef slope","Other",2,391,0.0051150895140665

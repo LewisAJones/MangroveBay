@@ -10,10 +10,12 @@
 library(ggplot2)
 library(ggrepel)
 library(ggforce)
+library(dplyr)
 
 # Load data -------------------------------------------------------------
-nmds <- readRDS("./results/NMDS_plot_data.RDS")
-stress <- round(readRDS(file = "./results/nmds.RDS")$stress, 3)
+nmds <- readRDS("results/NMDS_plot_data.RDS") %>%
+  mutate(LT = str_replace_all(string = LT, pattern = "_", replacement = ""))
+stress <- round(readRDS(file = "results/nmds.RDS")$stress, 3)
 stress <- paste0("Stress = ", stress)
 
 nmds$ReefZone[which(nmds$Age == "MIS5e" & 
@@ -66,6 +68,6 @@ ggplot(data = nmds, aes(x = NMDS1, y = NMDS2, shape = ReefZone,
   )
 
 # Save plot -------------------------------------------------------------
-ggsave("./figures/nmds.png",
+ggsave("figures/nmds/nmds.png",
        dpi = 300, width = 180, height = 180, units = "mm")
 

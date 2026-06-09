@@ -9,31 +9,6 @@
 # Load libraries --------------------------------------------------------
 library(tidyverse)
 library(vegan)
-# Was reef coral cover greater during MIS5e? ----------------------------
-# Load data
-coverage <- read.csv("./results/coverage.csv")
-# Split into list
-coverage$split <- paste0(coverage$Age, "_", coverage$ReefZone)
-coverage <- split(x = coverage, f = coverage$split)
-# Calculate median
-median(coverage$`MIS5e_Reef edge`$Coverage)
-median(coverage$`Modern_Reef edge`$Coverage)
-median(coverage$`MIS5e_Shallow reef slope`$Coverage)
-median(coverage$`Modern_Shallow reef slope`$Coverage)
-# Calculate IQR
-IQR(coverage$`MIS5e_Reef edge`$Coverage)
-IQR(coverage$`Modern_Reef edge`$Coverage)
-IQR(coverage$`MIS5e_Shallow reef slope`$Coverage)
-IQR(coverage$`Modern_Shallow reef slope`$Coverage)
-# Perform tests
-# MIS5e reef edge vs Modern reef edge
-wilcox.test(x = coverage$`MIS5e_Reef edge`$Coverage, 
-            y = coverage$`Modern_Reef edge`$Coverage,
-            alternative = c("greater"))
-# MIS5e reef slope vs Modern reef slope
-wilcox.test(x = coverage$`MIS5e_Shallow reef slope`$Coverage, 
-            y = coverage$`Modern_Shallow reef slope`$Coverage,
-            alternative = c("greater"))
 
 # Did colony size distribution decrease? --------------------------------
 # Load data
@@ -85,18 +60,9 @@ wilcox.test(x = colony$Porites_MIS5e$`End-Start (Intercept)`,
               y = colony$Porites_Modern$`End-Start (Intercept)`,
             alternative = c("greater"))
 
-# Was diversity higher in MIS5e? ----------------------------------------
-# Load data
-diversity <- read.csv("./results/diversity_indices.csv")
-# Summarise across age and reef zone
-diversity %>%
-  group_by(Age, ReefZone) %>%
-  summarise(Alpha = median(Alpha),
-         Pielou = median(Pielou))
-
 # Which taxa dominated the reef? ----------------------------------------
 # Load data
-abundance <- read.csv("./results/abundance_site.csv")
+abundance <- read.csv("results/abundance_transect.csv")
 # Convert to percentages
 abundance$Abundance <- abundance$Abundance * 100
 # Summarise via age and reef zone
@@ -120,7 +86,7 @@ abundance %>%
   arrange(desc(Abundance))
 
 # Are MIS5e communities distinct from the Modern? -----------------------
-mat <- read.csv("./results/abundance_matrix.csv")
+mat <- read.csv("results/abundance_matrix_transect.csv")
 # Extract columns
 df <- mat[, c(37, 38, 39)]
 # Drop columns

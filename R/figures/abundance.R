@@ -75,24 +75,23 @@ ggplot(abundance, aes(x = reorder_within(Genus, -Median, Age),
   geom_richtext(aes(
                 y = UQR + 2.5, 
                 label = paste0(round(Median, 2), "%")),
-                fill = NA, label.color = NA, size = 4, angle = 0, vjust = 0, hjust = 0.5) +
-  scale_y_continuous(limits = c(0, 100)) +
+                fill = NA, label.color = NA, size = 4, angle = 0, vjust = 0.3, hjust = 0.5) +
   scale_x_reordered() +
   ylab("Abundance (%)") +
   xlab ("Genus") +
-  facet_wrap(~Age, nrow = 2, ncol = 1, strip.position = "right", scales = "free_x") + 
+  facet_wrap(~Age, nrow = 1, ncol = 2, strip.position = "top", scales = "free_x") + 
   theme_bw() +
   theme(legend.position = "none",
         legend.title = element_blank(),
         plot.margin = margin(10, 5, 5, 5, unit = "mm"),
         strip.text = element_text(size = 14),
-        axis.title = element_text(size = 14),
-        axis.text.x = element_text(face = c("italic"), size = 12,
+        axis.title = element_text(size = 16),
+        axis.text.x = element_text(face = c("italic"), size = 14,
                                    angle = 90, vjust = 0.5, hjust = 1),
         strip.background = element_blank())
 # Save plot
 ggsave("figures/abundance/age_top10.png", 
-       height = 297, width = 210, units = "mm", dpi = 300)
+       height = 210, width = 297, units = "mm", dpi = 300)
 
 # Zone ------------------------------------------------------------------
 # Load data
@@ -170,7 +169,6 @@ ggplot(abundance, aes(x = reorder_within(Genus, -Median, list(Age, ReefZone)), y
   geom_text(aes(y = UQR + 2.5, 
                 label = paste0(round(Median, 2), "%"),),
             size = 3.25, angle = 0, vjust = 0, hjust = 0.5) +
-  scale_y_continuous(limits = c(0, 100)) +
   scale_x_reordered() +
   ylab("Abundance (%)") +
   xlab ("Genus") +
@@ -180,8 +178,8 @@ ggplot(abundance, aes(x = reorder_within(Genus, -Median, list(Age, ReefZone)), y
         legend.title = element_blank(),
         plot.margin = margin(10, 5, 5, 5, unit = "mm"),
         strip.text = element_text(size = 12),
-        axis.title = element_text(size = 14),
-        axis.text.x = element_text(face = c("italic"), size = 12,
+        axis.title = element_text(size = 16),
+        axis.text.x = element_text(face = c("italic"), size = 14,
                                    angle = 90, vjust = 0.5, hjust = 1),
         strip.background = element_blank())
 # Save plot

@@ -85,7 +85,7 @@ ggplot(data = colony, aes(x = `End-Start (Intercept)`, y = after_stat(count))) +
   # Add vertical line of median value
   geom_vline(aes(xintercept = median, colour = Age), linetype = 2) +
   # Add points of the median value
-  geom_point(aes(x = median, y = 0, fill = Age), colour = "black", shape = 23) +
+  geom_point(aes(x = median, y = 0, fill = Age), colour = "black", size = 2, shape = 23) +
   # Add text label of the number of intercepts
   geom_text(data = modern %>% filter(Genus %in% keepers), aes(x = Inf, y = Inf, label = n), 
             hjust = 1.1, vjust = 2, size = 3.5, colour = "grey15") +

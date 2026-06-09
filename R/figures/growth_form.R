@@ -27,26 +27,26 @@ growth <- growth %>%
 ggplot(growth, aes(x = reorder_within(Category, -Median, Age), 
                    y = Median, fill = Category, label = round(Median, 2))) +
   geom_col(colour = "black") +
-  geom_point(size = 1, colour = "black") +
   geom_errorbar(aes(ymin = LQR, ymax = UQR), colour = "black") +
+  geom_point(shape = 23, colour = "black") +
   geom_text(aes(y = UQR + 2.5, 
                 label = paste0(round(Median, 2), "%"),),
-            size = 3.75, angle = 0, vjust = -0.25, hjust = 0.5) +
-  scale_y_continuous(limits = c(0, 100)) +
+            size = 3, angle = 0, vjust = 1, hjust = 0.5) +
   scale_x_reordered() +
   ylab("Dominance (%)") +
   xlab ("Growth Form") +
-  facet_wrap(~Age, nrow = 2, ncol = 1, strip.position = "top", scales = "free_x") + 
+  facet_wrap(~Age, nrow = 1, ncol = 2, strip.position = "top", scales = "free_x") + 
   theme_bw() +
   theme(legend.position = "none",
         legend.title = element_blank(),
         plot.margin = margin(10, 5, 5, 5, unit = "mm"),
-        axis.text.x = element_text(size = 10, angle = 90, vjust = 0.5, hjust = 1),
-        strip.text = element_text(size = 12),
+        axis.text.x = element_text(size = 12, angle = 90, vjust = 0.5, hjust = 1),
+        axis.title = element_text(size = 16),
+        strip.text = element_text(size = 14),
         strip.background = element_blank())
 # Save plot
 ggsave("figures/growth_form/age.png", 
-       height = 297, width = 210, units = "mm", dpi = 300, scale = 0.8)
+       height = 210, width = 297, units = "mm", dpi = 300, scale = 0.8)
 
 # Zone ------------------------------------------------------------------
 # Load data

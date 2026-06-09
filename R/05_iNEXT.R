@@ -26,7 +26,7 @@ input <- corals %>%
   column_to_rownames(var = "Genus")
 
 # Diversity analyses ----------------------------------------------------
-# Get minimum length of coral transect * 2
+# Get minimum length of coral transect
 level <- min(corals$TransectCoralLength)
 # Get asymptote
 output <- iNEXT(x = input, 

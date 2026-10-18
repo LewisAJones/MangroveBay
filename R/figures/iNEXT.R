@@ -15,15 +15,11 @@ library(forcats)
 
 # Coverage-based rarefaction --------------------------------------------
 asymptote <- readRDS("results/rarefied_diversity_asymptote.RDS")
-# Metadata
-meta <- read.csv("results/transects.csv") %>%
-  mutate(LT = str_replace_all(string = LT, pattern = "_", replacement = ""))
 
 asymptote$iNextEst$size_based %>%
+  mutate(Age = "Modern") %>%
+  mutate(Age = if_else(str_detect(Assemblage, pattern = "SB"), "MIS5e", Age)) %>%
   rename(LT = "Assemblage") %>%
-  left_join(x = .,
-            y = meta[, c("LT", "Age", "ReefZone")],
-            by = "LT") %>%
   ggplot(., aes(x = m, y = qD, ymin = qD.LCL, ymax = qD.UCL, 
                 colour = fct_rev(Age), fill = fct_rev(Age), linetype = fct_rev(Method))) +
   geom_ribbon(alpha = 0.5, colour = NA, linetype = 1) +
@@ -32,7 +28,7 @@ asymptote$iNextEst$size_based %>%
              shape = 23, size = 2, colour = "black") +
   xlab("Number of Observations (cm)") +
   ylab("Genus Richness") +
-  facet_wrap(~LT, ncol = 3) +
+  facet_wrap(~LT) +
   theme_bw() +
   theme(legend.position = "bottom",
         legend.title = element_blank(),
@@ -42,7 +38,7 @@ asymptote$iNextEst$size_based %>%
         strip.background = element_blank())
 
 ggsave("figures/diversity/asymptote_transect.png", 
-       height = 297, width = 297, units = "mm", dpi = 300)
+       height = 210, width = 297, units = "mm", dpi = 300)
 
 estimates <- readRDS("results/rarefied_diversity_estimates.RDS")
 
@@ -79,9 +75,9 @@ estimates %>%
   rename(LT = "Assemblage") %>%
   group_by(Age) %>%
   summarise(Median = median(qD),
-            LCL = min(qD.LCL),
-            UCL = max(qD.UCL)) %>%
-  ggplot(., aes(x = fct_rev(Age), y = Median, ymin = LCL, ymax = UCL,
+            LQR = quantile(qD, 0.25),
+            UQR = quantile(qD, 0.75)) %>%
+  ggplot(., aes(x = fct_rev(Age), y = Median, ymin = LQR, ymax = UQR,
                 fill = fct_rev(Age), label = round(Median, 2))) +
   geom_col(colour = "black") +
   geom_errorbar(linewidth = 0.75, colour = "black") +
